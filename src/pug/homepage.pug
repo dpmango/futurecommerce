@@ -1,0 +1,453 @@
+---
+title: GreenArty
+---
+extends shared/_layout
+block content
+
+  // BEGIN SECTION :: firstscreen
+  section
+    .firstscreen
+      .firstscreen__info
+        h1(data-aos='fade-up') Ландшафтный дизайн
+          br 
+          | «Под ключ»
+        p(data-aos='fade-up' data-aos-delay="100") от профессиональных дизайнеров и инженеров
+  
+  // END SECTION :: firstscreen
+
+  // BEGIN SECTION :: advantages
+  section
+    .advantages
+      .container
+        h2#section-advantages(data-aos='fade-up') Преимущества
+        .advantages__grid
+          .advantages__item(data-aos='fade-up')
+            p.advantages__title Гарантия
+            p.advantages__sub-title 100% гарантя на растения до 2 лет, на инженерные системы до 10 лет.
+          .advantages__item.advantages__item--image.reveal(js-reveal data-anim="ltr")
+            .advantages__image
+              img(src="img/tree.svg", alt="")
+              img.hover(src="img/tree.png", alt="")
+            //- +icon('ico-tree')
+          .advantages__item(data-aos='fade-up')
+            p.advantages__title 15 лет
+            p.advantages__sub-title на рынке ландшафтных работ и мы облагородили более 1000 Га.
+          .advantages__item.advantages__item--image.reveal(js-reveal data-anim="ltr")
+            .advantages__image
+              img(src="img/shield.svg", alt="")
+              img.hover(src="img/shield.png", alt="")
+            //- +icon('ico-shield')
+          .advantages__item(data-aos='fade-up')
+            p.advantages__title Крупномеры
+            p.advantages__sub-title каждый год мы тщательно отбираем растения в лучших питомниках Европы.
+          .advantages__item.advantages__item--image.reveal(js-reveal data-anim="ltr")
+            .advantages__image
+              img(src="img/cup.svg", alt="")
+              img.hover(src="img/cup.png", alt="")
+            //- +icon('ico-cup')
+
+  // END SECTION :: advantages
+
+  // BEGIN SECTION :: services
+  section#section-services
+    .services
+      .container
+        h2(data-aos='fade-up') Услуги
+        .services__scroll(data-aos='fade-up')
+          .slider-nav(js-services-nav)
+            a.slider-nav__link.is-active(data-target="1") Озеленение
+            a.slider-nav__link(data-target="2") Проектирование
+            a.slider-nav__link(data-target="3") Строительство
+            a.slider-nav__link(data-target="4") Освещение
+            a.slider-nav__link(data-target="5") Уход
+        .services__slider(data-aos='fade-up')
+          .swiper-container(js-slider-services)
+            .swiper-wrapper
+              .swiper-slide
+                .services__image(js-parallax-scene )
+                  img.image-letter(src="img/service1-1.png", alt="" data-depth=".8")
+                  img.image-obj(src="img/service1-2.png", alt="" data-depth="0.4")
+                .services__info
+                  p.services__title Озеленение и благоустройство участка
+                  p.services__sub-title Создадим комфортное и уютное пространство. Наполним ваш сад жизнью, яркими красками, шелестом, листвы, ароматом цветов и пряных трав.
+              .swiper-slide
+                .services__image(js-parallax-scene )
+                  img.image-letter(src="img/service2-1.png", alt="" data-depth=".8")
+                  img.image-obj(src="img/service2-2.png", alt="" data-depth="0.4")
+                .services__info
+                  p.services__title Ландшафтное проектирование
+                  p.services__sub-title Создадим комфортное и уютное пространство. Наполним ваш сад жизнью, яркими красками, шелестом, листвы, ароматом цветов и пряных трав.
+              .swiper-slide
+                .services__image(js-parallax-scene )
+                  img.image-letter(src="img/service3-1.png", alt="" data-depth=".8")
+                  img.image-obj(src="img/service3-2.png", alt="" data-depth="0.4")
+                .services__info
+                  p.services__title Ландшафтное строительство
+                  p.services__sub-title Создадим комфортное и уютное пространство. Наполним ваш сад жизнью, яркими красками, шелестом, листвы, ароматом цветов и пряных трав.
+              .swiper-slide
+                .services__image(js-parallax-scene )
+                  img.image-letter(src="img/service4-1.png", alt="" data-depth=".8")
+                  img.image-obj(src="img/service4-2.png", alt="" data-depth="0.4")
+                .services__info
+                  p.services__title Система освещения
+                  p.services__sub-title Практичная подсветка дорожек, лестниц  и подъездов, световое декорирование ландшафтных элементов и растений.
+              .swiper-slide
+                .services__image(js-parallax-scene )
+                  img.image-letter(src="img/service5-1.png", alt="" data-depth=".8")
+                  img.image-obj(src="img/service5-2.png", alt="" data-depth="0.4")
+                .services__info
+                  p.services__title Уход за участком
+                  p.services__sub-title Создадим комфортное и уютное пространство. Наполним ваш сад жизнью, яркими красками, шелестом, листвы, ароматом цветов и пряных трав.
+            //- Add Pagination
+            .swiper-pagination
+
+  // END SECTION :: services
+
+  // BEGIN SECTION :: projects
+  section#section-projects
+    .projects
+      .container
+        h2(data-aos='fade-up') Выполненные проекты
+        .projects__carousel
+          .swiper-container(js-slider-projects)
+            .swiper-wrapper
+              .projects__item.swiper-slide
+                a(href="#")
+                .projects__image.reveal(js-reveal data-anim="ltr")
+                  img(src="img/project-1.jpg", alt="")
+                  .projects__image-hover
+                    p подробнее
+                    span.corner
+                    span.corner
+                    span.corner
+                    span.corner
+                p.projects__title(data-aos='fade-up') Озеленение
+                p.projects__info(data-aos='fade-up') Создадим комфортное и уютное пространство. Наполним ваш сад жизнью, яркими красками...
+              .projects__item.swiper-slide
+                a(href="#")
+                .projects__image.reveal(js-reveal data-anim="ltr")
+                  img(src="img/project-2.jpg", alt="")
+                  .projects__image-hover
+                    p подробнее
+                    span.corner
+                    span.corner
+                    span.corner
+                    span.corner
+                p.projects__title(data-aos='fade-up') Озеленение
+                p.projects__info(data-aos='fade-up') Создадим комфортное и уютное пространство. Наполним ваш сад жизнью, яркими красками...
+              .projects__item.swiper-slide
+                a(href="#")
+                .projects__image.reveal(js-reveal data-anim="ltr")
+                  img(src="img/project-3.jpg", alt="")
+                  .projects__image-hover
+                    p подробнее
+                    span.corner
+                    span.corner
+                    span.corner
+                    span.corner
+                p.projects__title(data-aos='fade-up') Озеленение
+                p.projects__info(data-aos='fade-up') Создадим комфортное и уютное пространство. Наполним ваш сад жизнью, яркими красками...
+              .projects__item.swiper-slide
+                a(href="#")
+                .projects__image.reveal(js-reveal data-anim="ltr")
+                  img(src="img/project-1.jpg", alt="")
+                  .projects__image-hover
+                    p подробнее
+                    span.corner
+                    span.corner
+                    span.corner
+                    span.corner
+                p.projects__title(data-aos='fade-up') Озеленение
+                p.projects__info(data-aos='fade-up') Создадим комфортное и уютное пространство. Наполним ваш сад жизнью, яркими красками...
+              .projects__item.swiper-slide
+                a(href="#")
+                .projects__image.reveal(js-reveal data-anim="ltr")
+                  img(src="img/project-2.jpg", alt="")
+                  .projects__image-hover
+                    p подробнее
+                    span.corner
+                    span.corner
+                    span.corner
+                    span.corner
+                p.projects__title(data-aos='fade-up') Озеленение
+                p.projects__info(data-aos='fade-up') Создадим комфортное и уютное пространство. Наполним ваш сад жизнью, яркими красками...
+            .swiper-scrollbar
+          
+  // END SECTION :: projects
+
+  // BEGIN SECTION :: stages
+  section#section-stages
+    .stages
+      .container
+        h2(data-aos='fade-up') Этапы работы
+        .stages__scroll(data-aos='fade-up')
+          .slider-nav(js-stages-nav)
+            a.slider-nav__link.is-active(data-target="1") Озеленение
+            a.slider-nav__link(data-target="2") Проектирование
+            a.slider-nav__link(data-target="3") Строительство
+            a.slider-nav__link(data-target="4") Освещение
+            a.slider-nav__link(data-target="5") Уход
+        .stages__slider(data-aos='fade-up')
+          .swiper-container(js-slider-stages)
+            .swiper-wrapper
+              .swiper-slide
+                .stages__image.reveal(js-reveal data-anim="ltr")
+                  img(src="img/stages-1.jpg", alt="")
+                .stages__info
+                  p.stages__title Озеленение и благоустройство 
+                  .stages__info-grid
+                    .stages__info-half
+                      a(href="#stage1-1" data-effect="mfp-zoom-in" js-popup)
+                        span.number 01
+                        span.block
+                          span.text Подготовительные работы
+                      a(href="#stage1-2" data-effect="mfp-zoom-in" js-popup)
+                        span.number 02
+                        span.block
+                          span.text Разработка проекта озеленения
+                      a(href="#stage1-3" data-effect="mfp-zoom-in" js-popup)
+                        span.number 03
+                        span.block
+                          span.text Работы по озеленению
+              .swiper-slide
+                .stages__image.reveal(js-reveal data-anim="ltr")
+                  img(src="img/stages-2.jpg", alt="")
+                .stages__info
+                  p.stages__title Ландшафтное проектирование
+                  .stages__info-grid
+                    .stages__info-half
+                      a(href="#stage2-1" data-effect="mfp-zoom-in" js-popup)
+                        span.number 01
+                        span.block
+                          span.text Общение с заказчиком
+                      a(href="#stage2-2" data-effect="mfp-zoom-in" js-popup)
+                        span.number 02
+                        span.block
+                          span.text Изыскательные работы
+                      a(href="#stage2-3" data-effect="mfp-zoom-in" js-popup)
+                        span.number 03
+                        span.block
+                          span.text Топографическая съёмка
+                      a(href="#stage2-4" data-effect="mfp-zoom-in" js-popup)
+                        span.number 04
+                        span.block
+                          span.text Эскизное проектирование
+                    .stages__info-half
+                      a(href="#stage2-5" data-effect="mfp-zoom-in" js-popup)
+                        span.number 05
+                        span.block
+                          span.text Проектные работы
+              .swiper-slide
+                .stages__image.reveal(js-reveal data-anim="ltr")
+                  img(src="img/stages-3.jpg", alt="")
+                .stages__info
+                  p.stages__title Ландшафтное строительство
+                  .stages__info-grid
+                    .stages__info-half
+                      a(href="#stage3-1" data-effect="mfp-zoom-in" js-popup)
+                        span.number 01
+                        span.block
+                          span.text Подготовительные и земельные работы
+                      a(href="#stage3-2" data-effect="mfp-zoom-in" js-popup)
+                        span.number 02
+                        span.block
+                          span.text Осушение почвы и водоотвод
+                      a(href="#stage3-3" data-effect="mfp-zoom-in" js-popup)
+                        span.number 03
+                        span.block
+                          span.text Система полива
+                      a(href="#stage3-4" data-effect="mfp-zoom-in" js-popup)
+                        span.number 04
+                        span.block
+                          span.text Система освещения
+                    .stages__info-half
+                      a(href="#stage3-5" data-effect="mfp-zoom-in" js-popup)
+                        span.number 05
+                        span.block
+                          span.text Иссусственные водоёмы и бассейны
+                      a(href="#stage3-6" data-effect="mfp-zoom-in" js-popup)
+                        span.number 06
+                        span.block
+                          span.text Спортивные и детские площадки
+                      a(href="#stage3-7" data-effect="mfp-zoom-in" js-popup)
+                        span.number 07
+                        span.block
+                          span.text Мощение садовых дорожек
+                      a(href="#stage3-8" data-effect="mfp-zoom-in" js-popup)
+                        span.number 08
+                        span.block
+                          span.text Проклажка коммуникаций оформление зимних садов
+              .swiper-slide
+                .stages__image.reveal(js-reveal data-anim="ltr")
+                  img(src="img/stages-2.jpg", alt="")
+                .stages__info
+                  p.stages__title Этап работы #4
+                  .stages__info-grid
+                    .stages__info-half
+                      a(href="#stage4-1" data-effect="mfp-zoom-in" js-popup)
+                        span.number 01
+                        span.block
+                          span.text Подготовительные и земельные работы
+                      a(href="#stage4-2" data-effect="mfp-zoom-in" js-popup)
+                        span.number 02
+                        span.block
+                          span.text Осушение почвы и водоотвод
+                    .stages__info-half
+                      a(href="#stage4-3" data-effect="mfp-zoom-in" js-popup)
+                        span.number 03
+                        span.block
+                          span.text Иссусственные водоёмы и бассейны
+                      a(href="#stage4-4" data-effect="mfp-zoom-in" js-popup)
+                        span.number 04
+                        span.block
+                          span.text Спортивные и детские площадки
+              .swiper-slide
+                .stages__image.reveal(js-reveal data-anim="ltr")
+                  img(src="img/stages-5.jpg", alt="")
+                .stages__info
+                  p.stages__title Уход за участком и садом
+                  .stages__info-grid
+                    .stages__info-half
+                      a(href="#stage5-1" data-effect="mfp-zoom-in" js-popup)
+                        span.number 01
+                        span.block
+                          span.text Уход за газоном
+                      a(href="#stage5-2" data-effect="mfp-zoom-in" js-popup)
+                        span.number 02
+                        span.block
+                          span.text Обрезка деревьев и кустарников
+                      a(href="#stage5-3" data-effect="mfp-zoom-in" js-popup)
+                        span.number 03
+                        span.block
+                          span.text Борьба с вредителями
+                      a(href="#stage5-4" data-effect="mfp-zoom-in" js-popup)
+                        span.number 04
+                        span.block
+                          span.text Внесение удобрений
+                    .stages__info-half
+                      a(href="#stage5-5" data-effect="mfp-zoom-in" js-popup)
+                        span.number 05
+                        span.block
+                          span.text Уход за водоёмами
+                      a(href="#stage5-6" data-effect="mfp-zoom-in" js-popup)
+                        span.number 06
+                        span.block
+                          span.text Подготовка растений к зиме
+            //- Add Pagination
+            //- .stages__scroll
+            //-   .swiper-pagination
+        
+  // END SECTION :: stages
+
+  // BEGIN SECTION :: team
+  section
+    .team
+      .container
+        h2(data-aos="fade-up") Команда
+        .team__grid
+          .team__main-slider(data-aos="fade-up")
+            .swiper-container(js-slider-team-main)
+              .swiper-wrapper
+                .swiper-slide
+                  .team__main-image.reveal(js-reveal data-anim="ltr")
+                    img(src="img/team-1.jpg", alt="")
+                  .team__main-about
+                    p.team__main-title Фамилия Имя #1
+                    p.team__main-sub-title Специализация. Регалии
+                    p.team__main-info Текст описание о человеке. Его достижения и прочее. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget.
+                .swiper-slide
+                  .team__main-image.reveal(js-reveal data-anim="ltr")
+                    img(src="img/team-2.jpg", alt="")
+                  .team__main-about
+                    p.team__main-title Фамилия Имя #2
+                    p.team__main-sub-title Специализация. Регалии
+                    p.team__main-info Текст описание о человеке. Его достижения и прочее. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget.
+                .swiper-slide
+                  .team__main-image.reveal(js-reveal data-anim="ltr")
+                    img(src="img/team-3.jpg", alt="")
+                  .team__main-about
+                    p.team__main-title Фамилия Имя #3
+                    p.team__main-sub-title Специализация. Регалии
+                    p.team__main-info Текст описание о человеке. Его достижения и прочее. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget.
+          .team__preview-slider
+            div(js-slider-preview)
+              .swiper-slide(data-slide="1")
+                .team__preview-image
+                  img(src="img/team-1.jpg", alt="")
+              .swiper-slide(data-slide="2")
+                .team__preview-image
+                  img(src="img/team-2.jpg", alt="")
+              .swiper-slide(data-slide="3")
+                .team__preview-image
+                  img(src="img/team-3.jpg", alt="")
+
+  // END SECTION :: team
+
+  // BEGIN SECTION :: contacts
+  section
+    .contacts
+      .container#section-contacts
+        img.contacts__image(src="img/footer-1.jpg", alt="")
+        img.contacts__image(src="img/footer-2.jpg", alt="")
+        img.contacts__image(src="img/footer-3.jpg", alt="")
+        h2(data-aos="fade-up") Контакты
+        .contacts__grid
+          .contacts__left(data-aos="fade-up")
+            p Телефон
+            a.contacts__link(href="tel:+74957874200") +7 495 787 42 00
+            p Почта
+            a.contacts__link(href="mailto:info@greenarty.ru") info@greenarty.ru
+            p Адрес
+            a.contacts__link(href="#") Москва, ул. Ленинская Слобода д.26, с.5 оф. 5104
+            .contacts__socials
+              a(href="#")
+                svg(xmlns='http://www.w3.org/2000/svg', width='50', height='50')
+                  circle.st0(cx='25.5', cy='25.1', r='6')
+                  path.st0(d='M30.8 9.8H19.2c-5.2 0-9.4 4.2-9.4 9.4v11.7c0 5.2 4.2 9.4 9.4 9.4h11.7c5.2 0 9.4-4.2 9.4-9.4V19.2c-.1-5.2-4.3-9.4-9.5-9.4zM25.5 35c-5.5 0-9.9-4.4-9.9-9.9s4.4-9.9 9.9-9.9 9.9 4.4 9.9 9.9c0 5.4-4.4 9.9-9.9 9.9zm9.2-17.5c-1.4 0-2.5-1.1-2.5-2.5s1.1-2.5 2.5-2.5 2.5 1.1 2.5 2.5c.1 1.4-1.1 2.5-2.5 2.5z')
+                  path.st0(d='M39.7 0H10.3C4.6 0 0 4.6 0 10.3v29.5C0 45.4 4.6 50 10.3 50h29.5C45.4 50 50 45.4 50 39.7V10.3C50 4.6 45.4 0 39.7 0zm4.2 32.2c0 6.4-5.2 11.6-11.6 11.6H17.8c-6.4 0-11.6-5.2-11.6-11.6V17.8c0-6.4 5.2-11.6 11.6-11.6h14.5c6.4 0 11.6 5.2 11.6 11.6v14.4z')
+              a(href="#")
+                svg(xmlns='http://www.w3.org/2000/svg', width='50', height='50')
+                  path.st0(d='M25.5 9.7c-8.4 0-15.2 6.8-15.2 15.2 0 3.2 1 6.2 2.7 8.6l-1.3 5.4 5.2-1.5c2.4 1.7 5.4 2.7 8.6 2.7 8.4 0 15.2-6.8 15.2-15.2 0-8.4-6.8-15.2-15.2-15.2zm8.6 21.9c-1 2.3-4.9 1.8-4.9 1.8-10.8-2-12.9-11.7-12.9-11.7-1.1-3.4 2.5-5.2 2.5-5.2.6-.3 1.4-.2 1.8.3.3.4.6 1.2.9 1.8.1.3.3.7.4 1 .2.5.4 1.1.4 1.7 0 .6-.6 1-.9 1.4-.2.2-.4.5-.6.7 1.4 4.1 6.9 6.1 6.9 6.1.4-.4.8-.9 1.3-1.3.3-.3.7-.8 1.1-.9.6-.2 1.3.2 1.8.5.6.3 1.1.6 1.7.9.4.3.8.6.9 1.1 0 .6-.2 1.3-.4 1.8z')
+                  path.st0(d='M39.7 0H10.3C4.6 0 0 4.6 0 10.3v29.5C0 45.4 4.6 50 10.3 50h29.5C45.4 50 50 45.4 50 39.7V10.3C50 4.6 45.4 0 39.7 0zM25.3 43.1c-3.2 0-6.2-.8-8.9-2.3l-9.2 2.6 2.3-9.3c-1.6-2.7-2.6-5.9-2.6-9.3 0-10.1 8.2-18.3 18.3-18.3 10.1 0 18.3 8.2 18.3 18.3.1 10.1-8.1 18.3-18.2 18.3z')
+
+              a(href="#")
+                svg(xmlns='http://www.w3.org/2000/svg', width='50', height='50')
+                  path.st0(d='M39.7 0H10.3C4.6 0 0 4.6 0 10.3v29.5C0 45.4 4.6 50 10.3 50h16.8V30.1h-6.8v-7.7h6.8V17c0-5.2 1.9-7 1.9-7 2.8-3.6 7.1-3.5 7.1-3.5H43v7.3h-4.6c-3.1-.1-3.4 2.6-3.4 3.2v5.4h7.7l-.9 7.7H35V50h4.7C45.4 50 50 45.4 50 39.7V10.3C50 4.6 45.4 0 39.7 0z')
+              a(href="#")
+                svg(xmlns='http://www.w3.org/2000/svg', width='50', height='50')
+                  path.st0(d='M39.7 0H10.3C4.6 0 0 4.6 0 10.3v29.5C0 45.4 4.6 50 10.3 50h29.5C45.4 50 50 45.4 50 39.7V10.3C50 4.6 45.4 0 39.7 0zM15 43.1H7.5V18.9H15v24.2zm-3.8-27.5c-2.4 0-4.3-1.9-4.3-4.3s1.9-4.4 4.3-4.4 4.3 2 4.3 4.4c.1 2.4-1.9 4.3-4.3 4.3zm31.9 27.5h-7.5V31.3c0-2.8 0-6.4-3.9-6.4s-4.5 3.1-4.5 6.2V43h-7.5V18.9h7.2v3.3h.1c1-1.9 3.4-3.9 7.1-3.9 7.6 0 9 5 9 11.5v13.3z')
+          
+          .contacts__right#section-lead(data-aos="fade-up")
+            form.js-lead-form(action="#" method="#")
+              .input-container
+                label(for="f1") Имя
+                input(type="text" id="f1" name="name" placeholder="Введите ваше имя")
+              .input-container
+                label(for="f2") Телефон / Почта
+                input(type="text" id="f2" name="phonemail" placeholder="Введите свой телефон или почту" js-phone-email-validation)
+              .input-container
+                label(for="f3") Комментарий
+                input(type="text" id="f3" placeholder="Введите свой комментарий")
+              .input-container
+                //- input.btn(type="submit" value="отправить заявку")
+                // progress button
+                .progress-button
+                  button
+                    span отправить заявку
+                  svg.progress-circle(width='70', height='70')
+                    path(d='m35,2.5c17.955803,0 32.5,14.544199 32.5,32.5c0,17.955803 -14.544197,32.5 -32.5,32.5c-17.955803,0 -32.5,-14.544197 -32.5,-32.5c0,-17.955801 14.544197,-32.5 32.5,-32.5z')
+                  svg.checkmark(width='70', height='70')
+                    path(d='m31.5,46.5l15.3,-23.2')
+                    path(d='m31.5,46.5l-8.5,-7.1')
+                  svg.cross(width='70', height='70')
+                    path(d='m35,35l-9.3,-9.3')
+                    path(d='m35,35l9.3,9.3')
+                    path(d='m35,35l-9.3,9.3')
+                    path(d='m35,35l9.3,-9.3')
+                // /progress-button
+
+              
+              a.contats__hidden-trigger(js-trigger-thanks-popup href="#thankpopup" data-effect="mfp-zoom-in" js-popup)
+
+
+  // END SECTION :: contacts

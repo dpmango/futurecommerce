@@ -1,0 +1,112 @@
+*
+  box-sizing: border-box
+  outline: none
+
+a
+  color: inherit
+  text-decoration: none
+  &:hover, &:focus
+    text-decoration: none
+
+ul
+  list-style: none
+  li
+    display: inline-block
+
+h1,
+h2,
+h3,
+h4,
+p
+  margin: 0
+
+body, html
+  background: white
+  color: $fontColor
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px
+  min-width: 320px
+  max-width: 100%
+  margin: 0
+  overflow-x: hidden
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  &.is-fixed
+    overflow: hidden !important
+
+.page
+  display: flex
+  flex-direction: column
+  min-height: 100vh
+  &__content
+    // used for sticky footer (flexbox way)
+    flex: 1 0 auto
+    display: flex
+    flex-direction: column
+    // header offset ex
+    // padding-top: 100px
+
+.container
+  max-width: 1920px
+  width: 100%
+  margin-left: auto
+  margin-right: auto
+  padding-left: 40px
+  padding-right: 40px
+
++r($tablet)
+  .container
+    padding-left: 20px
+    padding-right: 20px
+
+h2
+  font-family: $prata
+  font-size: 80px
+  color: $fontColor
+  line-height: 1.2
+  width: 100%
+  text-align: center
+  font-weight: 300
+
++r($wide)
+  h2
+    font-size: 65px
+
++r($desktop)
+  h2
+    font-size: 40px
+
++r($tablet)
+  h2
+    font-size: 30px
+
+input
+  -moz-appearance: none
+  -webkit-appearance: none
+
+.page
+  overflow: hidden
+
+// REMOVE FOR PRODUCTION !
+.dev-bp-debug
+  background: black
+  position: fixed
+  top: 0
+  right: 0
+  z-index: 9999
+  color: white
+  padding: 5px
+  font-size: 12px
+  border-bottom-left-radius: 5px
+
+
+.js-transition-overlay
+  position: fixed
+  top: 0
+  left: -100%
+  bottom: 0
+  z-index: 7
+  background: #252525
+  width: 100vw
+  will-change: transform
+  backface-visibility: hidden

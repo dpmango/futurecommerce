@@ -1,0 +1,184 @@
+.services
+  padding: 100px 0 120px
+  &__slider
+    max-width: 95%
+    margin: 90px auto 0
+  .swiper-container
+    // needs some space for parallax
+    overflow: visible
+  .swiper-slide
+    display: flex
+    align-items: center
+    justify-content: space-between
+    &:nth-of-type(2)
+      .services__image
+        img
+          &.image-letter
+            width: 100%
+    &:nth-of-type(4)
+      img
+        &.image-obj
+          top: auto !important
+          bottom: 0 !important
+    &:nth-of-type(5)
+      img
+        &.image-obj
+          top: auto !important
+          bottom: 0 !important
+  &__info
+    width: 48%
+    padding-right: 70px
+  &__image
+    max-width: 43%
+    position: relative
+    margin-left: 5%
+    img
+      &.image-letter
+        // max-width: 550px
+        max-height: 515px
+        width: 90%
+        height: auto
+      &.image-obj
+        max-width: 350px
+        width: 48%
+        height: auto
+        position: absolute
+        left: auto !important
+        right: -50px
+        top: 20% !important
+        &:nth-of-type(4)
+          background: red
+  &__title
+    font-size: 48px
+    color: $fontColor
+    line-height: 1.2
+    font-family: $prata
+    font-weight: 300
+  &__sub-title
+    font-size: 24px
+    color: $fontColor
+    margin-top: 35px
+    font-weight: 300
+
+  // animation part
+  &__image, &__title, &__sub-title
+    transition: .25s $ease
+    transform: translate(30px,0)
+    opacity: 0
+
+  .swiper-slide-active
+    .services
+      &__image, &__title, &__sub-title
+        opacity: 1
+        transform: translate(0,0)
+      &__image
+        transition-delay: .2s
+      &__title
+        transition-delay: .4s
+      &__sub-title
+        transition-delay: .5s
+
+  .swiper-pagination
+    position: absolute
+    left: auto
+    right: 0
+    bottom: auto
+    display: flex
+    flex-direction: column
+    align-items: flex-end
+    justify-content: center
+    width: 50px
+    top: 50%
+    transform: translateY(-50%)
+    z-index: 100
+  .swiper-pagination-bullet
+    position: relative
+    width: 20px
+    height: 5px
+    background: transparent
+    opacity: 1
+    border-radius: 0
+    margin: 5px 0 !important
+    padding: 10px 0
+    display: inline-block
+    transition: all $transitionSpeed $ease
+    &::after
+      display: inline-block
+      content: ' '
+      position: absolute
+      right: 0
+      left: 0
+      top: 50%
+      transform: translateY(-50%)
+      height: 5px
+      background: #bdbdbd
+  .swiper-pagination-bullet-active
+    width: 50px
+    &::after
+      background: $hoverColor
+
++r($hd)
+  .services
+    padding: 80px 0 80px
+    &__slider
+      max-width: 100%
+      margin-top: 80px
+    &__title
+      font-size: 36px
+    &__sub-title
+      font-size: 20px
+      margin-top: 35px
+
++r($desktop1068)
+  .services
+    &__image
+      margin-left: 0
+
++r($desktop)
+  .services
+    padding: 60px 0 0
+    &__slider
+      margin-top: 60px
+    &__title
+      font-size: 30px
+    &__sub-title
+      font-size: 18px
+    &__info
+      width: 57%
+      padding-right: 60px
+    &__image
+      max-width: 35%
+
++r($tablet)
+  .services
+    padding: 30px 0 0
+    &__scroll
+      overflow: hidden
+      margin-bottom: -30px
+
+    &__slider
+      margin-top: 40px
+    .swiper-slide
+      flex-wrap: wrap
+      &:nth-of-type(2)
+        .services__image
+          img
+            max-width: 255px
+            // &.image-letter
+            //   max-width: 255px !important
+    &__image
+      width: 70%
+      max-width: 250px
+      img
+        // max-width: 250px
+        height: auto
+    &__info
+      width: 100%
+      max-width: 100%
+      margin-top: 15px
+    &__title
+      font-size: 24px
+      margin-top: 15px
+    &__sub-title
+      font-size: 14px
+      margin-top: 15px

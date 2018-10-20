@@ -1,0 +1,259 @@
+.stages
+  padding: 110px 0 110px
+
+  &__slider
+    max-width: 95%
+    margin: 65px auto 0
+  .swiper-slide
+    display: flex
+    align-items: center
+    justify-content: space-between
+  &__info
+    width: 50%
+    height: 100%
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    justify-content: flex-start
+    margin-bottom: auto
+    a
+      display: flex
+      align-items: center
+      justify-content: flex-start
+      margin-top: 47px
+      // max-width: 450px
+      .number
+        color: $hoverColor
+        font-size: 48px
+        font-weight: 300
+        margin-right: 35px
+        font-family: $prata
+        min-width: 64px
+      .block
+        display: block
+      .text
+        font-size: 24px
+        border-bottom: 1px solid $fontColor
+        color: $fontColor
+        font-weight: 300
+        display: inline
+        transition: all $transitionSpeed $ease
+        line-height: 1.3
+      &:hover
+        .text
+          color: $hoverColor
+          border-color: transparent
+  &__info-grid
+    display: flex
+    align-items: flex-start
+    justify-content: space-between
+    width: 100%
+  &__info-half
+    width: 48%
+    max-width: 450px
+
+  &__image
+    max-width: 40%
+    font-size: 0
+    img
+      width: 100%
+      height: auto
+  &__title
+    font-size: 48px
+    color: $fontColor
+    line-height: 1.2
+    font-family: $prata
+    font-weight: 300
+    padding-bottom: 25px
+  &__scroll
+    width: 100%
+  .swiper-container
+    margin-top: -27px
+  .swiper-wrapper
+    padding-top: 178px
+    padding-bottom: 5px
+  .swiper-pagination
+    bottom: auto
+    width: 100%
+    top: 0px
+    left: 50%
+    transform: translateX(-50%)
+  .swiper-pagination-bullet
+    font-size: 0
+    margin: 0 30px !important
+    padding: 0
+    height: auto
+    width: auto
+    border-radius: 0
+    background: transparent
+    opacity: 1
+    &:after
+      display: block
+      position: static
+      font-size: 24px
+      color: $fontColor
+      transition: all $transitionSpeed $ease
+      font-weight: 300
+      opacity: 1
+    &:nth-of-type(1)
+      &:after
+        content: 'Озеленение'
+    &:nth-of-type(2)
+      &:after
+        content: 'Проектирование'
+    &:nth-of-type(3)
+      &:after
+        content: 'Строительство'
+    &:nth-of-type(4)
+      &:after
+        content: 'Освещение'
+    &:nth-of-type(5)
+      &:after
+        content: 'Уход'
+  .swiper-pagination-bullet-active
+    &:after
+      font-weight: 400
+      color: $hoverColor
+
+  &__image, &__title, &__info a
+    transition: .25s $ease
+    transform: translate(30px,0)
+    opacity: 0
+
+  .swiper-slide-active
+    .stages
+      &__image, &__title, &__info a
+        opacity: 1
+        transform: translate(0,0)
+      &__image
+        transition-delay: .2s
+      &__title
+        transition-delay: .4s
+      &__info a
+        &:nth-child(1)
+          transition-delay: .5s
+        &:nth-child(2)
+          transition-delay: .55s
+        &:nth-child(3)
+          transition-delay: .6s
+        &:nth-child(4)
+          transition-delay: .65s
+        &:nth-child(5)
+          transition-delay: .7s
+        &:nth-child(6)
+          transition-delay: .75s
+        &:nth-child(7)
+          transition-delay: .8s
+        &:nth-child(8)
+          transition-delay: .85s
+        &:nth-child(9)
+          transition-delay: .9s
+        &:nth-child(10)
+          transition-delay: .95s
+
++r($hd)
+  .stages
+    padding: 95px 0
+    &__slider
+      max-width: 100%
+    &__info
+      width: 59%
+      a
+        margin-top: 35px
+        .number
+          font-size: 36px
+          min-width: 50px
+          margin-right: 10px
+        .text
+          font-size: 20px
+    &__image
+      width: 38%
+    &__title
+      font-size: 36px
+      padding-bottom: 10px
+    .swiper-wrapper
+      padding-top: 90px
+    .swiper-pagination-bullet
+      margin: 0 15px !important
+      &:after
+        font-size: 20px
+
++r($desktop1068)
+  .stages
+    padding: 70px 0
+    &__slider
+      max-width: 100%
+    &__info
+      width: 45%
+      max-width: 45%
+      a
+        margin-top: 25px
+        .number
+          font-size: 24px
+          min-width: 35px
+          margin-right: 10px
+        .text
+          font-size: 16px
+
+    &__image
+      width: 50%
+      max-width: 50%
+    &__title
+      font-size: 24px
+      padding-bottom: 7px
+    &__info-grid
+      flex-wrap: wrap
+    &__info-half
+      width: 100%
+    .swiper-slide
+      align-items: flex-start
+
++r($tablet)
+  .stages
+    padding: 40px 0
+    .container
+      position: relative
+    &__slider
+      margin-top: 45px
+    &__info
+      max-width: 100%
+      width: 100%
+      margin-top: 15px
+      a
+        margin-top: 15px
+        .number
+          font-size: 20px
+          min-width: 30px
+          margin-right: 5px
+        .text
+          font-size: 16px
+    &__image
+      width: 100%
+      max-width: 100%
+      img
+        max-width: 250px
+        height: auto
+    .swiper-wrapper
+      padding-top: 50px
+    .swiper-pagination
+      text-align: left
+    .swiper-slide
+      flex-wrap: wrap
+    .swiper-pagination-bullet
+      margin: 0 20px 0 0 !important
+      &:after
+        font-size: 16px
+    &__scroll
+      overflow: hidden
+      position: absolute
+      z-index: 2
+      top: 35px
+      height: auto
+      max-width: 89%
+    .swiper-pagination
+      overflow-x: scroll
+      display: flex
+      flex-wrap: nowrap
+      padding-bottom: 30px
+      margin-bottom: -30px
+      width: 100%

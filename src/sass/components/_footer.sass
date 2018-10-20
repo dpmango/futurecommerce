@@ -1,0 +1,52 @@
+.footer
+  padding: 173px 0 113px
+  .container
+    position: relative
+  &__image
+    position: absolute
+    bottom: -220px
+    max-width: 600px
+    width: 60%
+    right: -230px
+    transform: rotate(40deg)
+  &__wrapper
+    display: flex
+    align-items: center
+    justify-content: flex-start
+    position: relative
+    z-index: 2
+    img
+      width: 200px
+      height: auto
+    p
+      font-family: $regular
+      line-height: 1
+      color: #9d9d9d
+      margin: 0 51px 0 44px
+      font-size: 24px
+      border-bottom: 1px solid transparent
+    a
+      font-size: 24px
+      color: #4d4848
+      border-bottom: 1px solid transparent
+      transition: all $transitionSpeed $ease
+      &:hover
+        color: $redColor
+        border-color: $redColor
+
++r($tablet)
+  .footer
+    padding: 40px 0 30px
+    &__image
+      display: none
+    &__wrapper
+      flex-direction: column
+      align-items: flex-start
+      justify-content: flex-start
+      img
+        width: 140px
+      p
+        margin: 9px 0 20px
+        font-size: 16px
+      a
+        font-size: 16px

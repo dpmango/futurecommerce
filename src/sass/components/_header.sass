@@ -1,87 +1,114 @@
 /* HEADER
 .header
-  position: absolute
+  position: fixed
   top: 0
   right: 0
   left: 0
-  background: transparent
+  background: #e0e0e0
   z-index: 100
   transform: translate3d(0,0,0)
-  &.is-fixed-start
-    position: fixed
-    background: rgba(0,0,0,0.9)
-    transform: translate3d(0,-100%,0)
-    .header__wrapper
-      padding: 20px 0
-    .header__menu
-      margin: 0 50px
-      max-width: 100%
-    .header__menu-link
-      font-size: 20px
-    .header__btn
-      padding: 20px 40px
-      font-size: 20px
-    .header__logo
-      img
-        height: 38px
-        margin-top: -5px
-  &.is-fixed
-    transition: all $transitionSpeed $ease
-    transform: translate3d(0,0,0)
+  // &.is-fixed-start
+  //   position: fixed
+  //   background: rgba(0,0,0,0.9)
+  //   transform: translate3d(0,-100%,0)
+  //   .header__wrapper
+  //     padding: 30px 0
+  //   .header__menu-link
+  //     font-size: 20px
+  //   .header__btn
+  //     padding: 20px 40px
+  //     font-size: 20px
+  //   .header__logo
+  //     img
+  //       height: 38px
+  //       margin-top: -5px
+  // &.is-fixed
+  //   transition: all $transitionSpeed $ease
+  //   transform: translate3d(0,0,0)
 
-  &__mobile
-    display: flex
-    width: 100%
-    align-items: center
-    justify-content: space-between
   &__wrapper
     display: flex
     align-items: center
-    justify-content: space-between
-    padding: 60px 45px 20px
-    // transition: all $transitionSpeed $ease
-  &__logo
-    transition: all $transitionSpeed $ease
-    &:hover
-      opacity: 0.7
-    img
-      height: 41px
-      width: auto
-      margin-top: -15px
-      transition: all $transitionSpeed $ease
+    justify-content: flex-start
+    padding: 29px 0
+
   &__menu
     margin: 0 auto
-    max-width: 70%
+    max-width: 100%
     width: 100%
     text-align: center
     display: flex
-    align-content:
-    justify-content: space-between
+    justify-content: flex-start
     transition: all $transitionSpeed $ease
   &__menu-link
-    color: #fff
-    font-weight: 400
+    display: flex
+    align-items: center
+    color: #141314
     text-transform: uppercase
-    font-size: 24px
-    margin: 0 auto
-    transition: all $transitionSpeed $ease
+    font-size: 37px
+    margin: 0 40px -3px 0
+    font-family: $aabebas
+    line-height: normal
+    span
+      position: relative
+      transition: all $transitionSpeed $ease
+      &:before
+        display: block
+        height: 2px
+        position: absolute
+        content: ''
+        width: 0
+        left: 0
+        bottom: 0
+        background: $redColor
+        transition: all $transitionSpeed $ease
     &:hover
-      opacity: 0.7
+      color: $redColor
+      span
+        &:before
+          width: 100%
   &__btn
-    display: block
-    border: 1px solid $whiteColor
+    display: flex
+    align-items: center
+    justify-content: center
     color: $whiteColor
+    font-family: $bold
+    background: $redColor
+    border-radius: 7px
     font-size: 24px
-    font-weight: 400
-    text-transform: uppercase
     text-decoration: none
     text-align: center
-    padding: 27px 56px
+    padding: 21px 47px
     line-height: 1
     transition: all $transitionSpeed $ease
     &:hover
-      background: $whiteColor
-      color: $fontColor
+      background: darken($redColor, 10)
+  &__language
+    display: inline-block
+    color: #141314
+    text-transform: uppercase
+    font-size: 37px
+    margin: 0 72px -3px 0
+    font-family: $aabebas
+    line-height: normal
+    span
+      position: relative
+      transition: all $transitionSpeed $ease
+      &:before
+        display: block
+        height: 2px
+        position: absolute
+        content: ''
+        width: 0
+        left: 0
+        bottom: 0
+        background: $redColor
+        transition: all $transitionSpeed $ease
+    &:hover
+      color: $redColor
+      span
+        &:before
+          width: 100%
 
   .hamburger
     display: none
@@ -94,129 +121,88 @@ body.is-transitioning
       &.is-active, &:focus, &:hover
         color: #fff
 
-+r($hd)
++r($hd1640)
   .header
-    &__wrapper
-      padding: 40px 0 0 0
-    &__menu
-      margin: 0 25px
-      max-width: 100%
     &__menu-link
-      font-size: 16px
+      font-size: 28px
+      margin: 0 20px -3px 0
+    &__language
+      font-size: 28px
+      margin: 0 35px -3px 0
     &__btn
+      font-size: 22px
+      padding: 17px 30px
+
++r($wide)
+  .header
+    &__menu-link
+      font-size: 22px
+      margin: 0 13px -3px 0
+    &__language
+      font-size: 22px
+      margin: 0 26px -3px 0
+    &__btn
+      font-size: 18px
       padding: 15px 25px
-      font-size: 16px
-    &__logo
-      img
-        height: 35px
-        margin-top: -12px
-    &.is-fixed-start
-      .header__wrapper
-        padding: 20px 0 20px
-      .header__menu
-        margin: 0 25px
-        // max-width: 60%
-      .header__menu-link
-        font-size: 16px
-      .header__btn
-        padding: 15px 25px
-        font-size: 16px
-      .header__logo
-        img
-          height: 35px
-          margin-top: -12px
 
 +r($desktop)
   .header
-    &__wrapper
-      padding: 30px 0 0 0
+    .container
+      padding: 0
     &__menu
-      margin: 0 10px
-      max-width: 100%
-    &__menu-link
-      font-size: 14px
-    &__btn
-      padding: 10px 20px
-      font-size: 14px
-    &__logo
-      img
-        height: 20px
-        margin-top: -10px
-    &.is-fixed-start
-      .header__wrapper
-        padding: 20px 0 20px
-      .header__menu
-        margin: 0 10px
-        max-width: 100%
-      .header__menu-link
-        font-size: 14px
-      .header__btn
-        padding: 10px 20px
-        font-size: 14px
-      .header__logo
-        img
-          height: 20px
-          margin-top: -10px
-+r($tablet)
-  .header
-    // display: none
-    &.is-fixed-start
-      .header__wrapper
-        padding: 10px 0
-      .header__logo
-        img
-          height: 20px
-          margin-top: 0
-      .header__menu-link
-        font-size: 16px
-        line-height: 1.2
-        margin: 15px 0
-      .header__btn
-        margin: 0
-        font-size: 16px
-        line-height: 1
-        padding: 15px 30px
-        margin-top: 15px
-    &__mobile
       position: fixed
-      flex-direction: column
-      align-items: center
-      justify-content: center
+      z-index: 100
       min-height: 100vh
-      background: rgba(0,0,0,0.9)
-      left: 0
+      background: #fff
       top: 0
-      padding: 60px 30px 30px 30px
-      margin-left: 100%
-      transition: all $transitionSpeed $ease
-      // max-width: calc(100% - 20px)
-      &.is-active
-        margin-left: 0
-    &__menu
       flex-direction: column
-      margin: 0
-    &__btn
-      margin: 0
-      font-size: 16px
-      line-height: 1
-      padding: 15px 30px
-      margin-top: 15px
+      padding: 90px 20px 25px
+      left: -100%
+      &.is-active
+        left: 0
     &__menu-link
-      font-size: 16px
-      line-height: 1.2
-      margin: 15px 0
-    &__logo
+      font-size: 24px
+      margin-bottom: 20px
+      width: auto
+      margin: 0 0 20px 0
+    &__btn
       position: relative
-      z-index: 2
-      img
-        height: 20px
-        margin-top: 0
-    &__wrapper
-      padding-top: 10px
+      z-index: 102
+      margin-left: auto
+      margin-right: 0
+
+    &__language
+      font-size: 24px
+      margin: 0 26px -3px auto
+      position: relative
+      z-index: 103
+    &__btn-container
+      margin-left: 0
+    &__mobile-btn
+      margin-top: auto
     .hamburger
       display: block
-      .hamburger-inner
-        background: $whiteColor
-        &:before,
-        &:after
-          background: $whiteColor
+      position: relative
+      z-index: 103
+      margin-left: 0
+      order: -1
+    &__wrapper
+      padding: 10px 20px
+      &:before
+        display: block
+        position: absolute
+        content: ''
+        width: 100%
+        height: 100%
+        background: #e6e7e8
+        left: 0
+        top: 0
+        z-index: 102
+
++r($tablet)
+  .header
+    &__language
+      margin-left: 0
+      margin-right: auto
+    .hamburger
+      order: 2

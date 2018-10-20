@@ -5,8 +5,8 @@ extends shared/_layout
 block content
 
   // BEGIN SECTION :: firstscreen
-  section
-    .firstscreen
+  section.firstscreen
+    .container
       .firstscreen__info
         p.prata Ирина Йозефсон-Шнайдер
         p.aabebas О событии Расписание
@@ -15,3 +15,34 @@ block content
         p.bebas 31 23 62
   
   // END SECTION :: firstscreen
+
+  // BEGIN SECTION :: video
+  section.video
+    .container.container--small
+      h2(data-aos='fade-up') Прямая трансляция
+      .video__container(data-aos='fade-up')
+        iframe(src='https://www.youtube.com/embed/LTvFsTbyILg', frameborder='0', allow='autoplay; encrypted-media', allowfullscreen='' js-video)
+        .video__image
+          img(src="img/video.jpg", alt="")
+          a.video__play(href="#" js-play-video)
+            img(src="img/play.svg", alt="")
+  // END SECTION :: video
+
+  // BEGIN SECTION :: companies
+
+  section.companies
+    .container.container--small
+      .companies__grid
+        .companies__item(data-aos='fade-left')
+          .companies__image
+            img(src="img/delivery.png", alt="")
+          .companies__info
+            p Участников конференции кормит Delivery Club
+        .companies__item(data-aos='fade-left' data-aos-delay='300')
+          .companies__image
+            img(src="img/citimobil.png", alt="")
+          .companies__info
+            p Официальный перевозчик конференции
+            p.bold Промокод: #mail.group
+
+  // END SECTION :: companies

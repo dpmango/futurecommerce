@@ -27,7 +27,10 @@ $(document).ready(function() {
     initParallax();
     initValidations();
     initScrollMonitor();
+    initTeleport();
   }
+
+  _window.on("resize", debounce(setBreakpoint, 200));
 
   // this is a master function which should have all functionality
   pageReady();
@@ -52,10 +55,19 @@ $(document).ready(function() {
     });
   }
 
+  // play video
+  _document.on("click", "[js-play-video]", function() {
+    //as noted in addendum, check for querystring exitence
+    var symbol = $("[js-video]")[0].src.indexOf("?") > -1 ? "&" : "?";
+    //modify source to autoplay and start video
+    $("[js-video]")[0].src += symbol + "autoplay=1";
+    $(".video__container").addClass("is-active");
+  });
+
   // HAMBURGER TOGGLER
   _document.on("click", "[js-hamburger]", function() {
     $(this).toggleClass("is-active");
-    $(".header__mobile").toggleClass("is-active");
+    $(".header__menu").toggleClass("is-active");
     $("body").toggleClass("is-fixed");
     $("html").toggleClass("is-fixed");
   });
@@ -64,7 +76,7 @@ $(document).ready(function() {
 
   function closeMobileMenu() {
     $("[js-hamburger]").removeClass("is-active");
-    $(".header__mobile").removeClass("is-active");
+    $(".header__menu").removeClass("is-active");
   }
 
   // header scroll
@@ -109,6 +121,62 @@ $(document).ready(function() {
     TweenLite.to(window, 1, {
       scrollTo: targetScroll,
       ease: easingSwing
+    });
+  }
+
+  ////////////
+  // TELEPORT PLUGIN
+  ////////////
+  function initTeleport(printable) {
+    $("[js-teleport]").each(function(i, val) {
+      var self = $(val);
+      var objHtml = $(val).html();
+      var target = $(
+        "[data-teleport-target=" + $(val).data("teleport-to") + "]"
+      );
+      var conditionMedia = $(val)
+        .data("teleport-condition")
+        .substring(1);
+      var conditionPosition = $(val)
+        .data("teleport-condition")
+        .substring(0, 1);
+
+      if (target && objHtml && conditionPosition) {
+        function teleport(shouldPrint) {
+          var condition;
+
+          if (conditionPosition === "<") {
+            condition = _window.width() < conditionMedia;
+          } else if (conditionPosition === ">") {
+            condition = _window.width() > conditionMedia;
+          }
+
+          if (shouldPrint === true) {
+            target.html(objHtml);
+            self.html("");
+          } else {
+            if (condition) {
+              target.html(objHtml);
+              self.html("");
+            } else {
+              self.html(objHtml);
+              target.html("");
+            }
+          }
+        }
+
+        if (printable == true) {
+          teleport(printable);
+        } else {
+          teleport();
+          _window.on(
+            "resize",
+            debounce(function() {
+              teleport(printable);
+            }, 100)
+          );
+        }
+      }
     });
   }
 
@@ -486,5 +554,26 @@ $(document).ready(function() {
   function triggerBody() {
     $(window).scroll();
     $(window).resize();
+  }
+  //////////
+  // DEVELOPMENT HELPER
+  //////////
+  function setBreakpoint() {
+    var wHost = window.location.host.toLowerCase();
+    var displayCondition =
+      wHost.indexOf("localhost") >= 0 || wHost.indexOf("surge") >= 0;
+    if (displayCondition) {
+      var wWidth = _window.width();
+
+      var content = "<div class='dev-bp-debug'>" + wWidth + "</div>";
+
+      $(".page").append(content);
+      setTimeout(function() {
+        $(".dev-bp-debug").fadeOut();
+      }, 1000);
+      setTimeout(function() {
+        $(".dev-bp-debug").remove();
+      }, 1500);
+    }
   }
 });

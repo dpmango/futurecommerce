@@ -23,7 +23,7 @@ p
 body, html
   background: white
   color: $fontColor
-  font-family: 'Roboto', sans-serif;
+  font-family: $regular
   font-size: 16px
   min-width: 320px
   max-width: 100%
@@ -47,12 +47,16 @@ body, html
     // padding-top: 100px
 
 .container
-  max-width: 1920px
+  max-width: 1800px
   width: 100%
   margin-left: auto
   margin-right: auto
   padding-left: 40px
   padding-right: 40px
+  &--small
+    max-width: 1610px
+
+  // outline: 1px solid red
 
 +r($tablet)
   .container
@@ -60,25 +64,30 @@ body, html
     padding-right: 20px
 
 h2
-  font-family: $prata
-  font-size: 80px
-  color: $fontColor
+  font-family: $bebasbold
+  font-size: 82px
+  color: $blackColor
   line-height: 1.2
   width: 100%
   text-align: center
-  font-weight: 300
+  width: 100%
+  outline: 1px solid red
+  padding: 95px 0
 
 +r($wide)
   h2
-    font-size: 65px
+    font-size: 66px
+    padding: 90px 0
 
 +r($desktop)
   h2
-    font-size: 40px
+    font-size: 52px
+    padding: 60px 0
 
 +r($tablet)
   h2
-    font-size: 30px
+    font-size: 40px
+    padding: 20px 0
 
 input
   -moz-appearance: none

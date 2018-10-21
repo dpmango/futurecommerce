@@ -8,19 +8,226 @@ block content
   section.firstscreen
     .container
       .firstscreen__info
-        p.prata Ирина Йозефсон-Шнайдер
-        p.aabebas О событии Расписание
-        p.bold Инвестиции в e-commerce
-        p.regular Открытый разговор с основателями и первыми лицами технологических e-commerce компаний. Реальные истории успеха и роста, проб и ошибок, практические кейсы сервисов в развивающейся индустрии.
-        p.bebas 31 23 62
+        img(src="img/logotype.svg", alt="")
   
   // END SECTION :: firstscreen
 
-  // BEGIN SECTION :: speakers
-  section.speakers
+  // BEGIN SECTION :: timer
+  section.timer(data-aos='fade-up')
     .container
-      h2 Спикеры
-      .speakers__carousel
+      .timer__grid
+        p До начала конференции осталось:
+        .timer-container
+          .timer-item
+            p#days
+            span день
+          .timer-item
+            p#hours
+            span часа
+          .timer-item
+            p#minutes
+            span минут
+          .timer-item
+            p#seconds
+            span секунд
+  
+  // END SECTION :: timer
+
+  // BEGIN SECTION :: phrase
+  section.phrase#section-about
+    .container
+      img.phrase__image(src="img/place.svg", alt="" data-aos='fade-up' data-aos-delay='300')
+      .phrase__container(data-aos='fade-up')
+        p Рынок e-commerce стал темой обсуждений и споров, интереса инвесторов и стартовой площадкой для предпринимателей нового поколения. Помимо покупки традиционных товаров электроники и одежды, теперь можно в один клик заказать еду, вызвать такси, записаться к врачу или заказать уборку.
+        p В e-commerce происходят глобальные изменения, основатели и их команды балансируют между аналитическими и технологическими задачами, продолжая работать с традиционными операционными офлайн вызовами.  
+        p Это большой путь проб и экспериментов. Проходя его каждый день с нашими e-commerce бизнесами, мы решили поделиться своей экспертизой и пригласить к диалогу коллег по локальному и международному рынкам.
+        p FuturEcommerce от Mail.Ru Group станет площадкой для обмена опытом среди практиков, которые сегодня определяют будущее e-commerce.
+      .phrase__person(data-aos='fade-up')
+        .phrase__p-image
+          img(src="img/phrase.png", alt="")
+        .phrase__info
+          .phrase__title Ирина
+            br
+            | Йозефсон-Шнайдер 
+          p вице-президент по развитию электронной коммерции
+  // END SECTION :: phrase
+  
+  // BEGIN SECTION :: program
+  section.program#section-program
+    .container
+      img.program__image-1(src="img/program-1.svg", alt="" data-aos='fade-up')
+      h2(data-aos='fade-up') Программа
+      .program__container
+        .program__item
+          .program__line
+          .program__left(data-aos='fade-right')
+            p.program__time 09:00
+              span –
+              br
+              | 10:00
+          .program__middle(data-aos='fade-up' data-aos-delay='150')
+          .program__right(data-aos='fade-left' data-aos-delay='300')
+            p Сбор гостей, завтрак от Delivery Club
+        .program__item
+          .program__line
+          .program__left(data-aos='fade-right')
+            p.program__time 10:00
+              span –
+          .program__middle(data-aos='fade-up' data-aos-delay='150')
+          .program__right(data-aos='fade-left' data-aos-delay='300')
+            p Открытие конференции
+        .program__item
+          .program__line
+          .program__left(data-aos='fade-right')
+            p.program__time 10:00
+              span –
+              br
+              | 11:00
+          .program__middle(data-aos='fade-up' data-aos-delay='150')
+          .program__right(data-aos='fade-left' data-aos-delay='300')
+            .program__right-main
+              img(src="img/city.svg", alt="")
+              .program__title City Mobility
+              p.program__desc Новые возможности и бизнес-модели для роста онлайн сервисов в городе: агрегаторы такси, каршеринг, райдшеринг, общественный транспорт.
+        .program__item
+          .program__line
+          .program__left(data-aos='fade-right')
+            p.program__time 11:00
+              span –
+              br
+              | 13:00
+          .program__middle(data-aos='fade-up' data-aos-delay='150')
+          .program__right(data-aos='fade-left' data-aos-delay='300')
+            .program__right-main
+              img(src="img/services.svg", alt="")
+              .program__title Services on demand
+              p.program__desc Особенности развития  офлайн-услуг в digital: медицина, ремонт, уборка, красота, образование.
+        .program__item
+          .program__line
+          .program__left(data-aos='fade-right')
+            p.program__time 13:00
+              span –
+              br
+              | 14:00
+          .program__middle(data-aos='fade-up' data-aos-delay='150')
+          .program__right(data-aos='fade-left' data-aos-delay='300')
+            p Lunch от Delivery Club
+        .program__item
+          .program__line
+          .program__left(data-aos='fade-right')
+            p.program__time 14:00
+              span –
+              br
+              | 15:00
+          .program__middle(data-aos='fade-up' data-aos-delay='150')
+          .program__right(data-aos='fade-left' data-aos-delay='300')
+            .program__right-main
+              img(src="img/food.svg", alt="")
+              .program__title Food Tech
+              p.program__desc Развитие разных бизнес-моделей и ниш: доставка из ресторанов, сервисы питания по подписке, доставка продуктов, фермерские стартапы, B2B.
+        .program__item
+          .program__line
+          .program__left(data-aos='fade-right')
+            p.program__time 15:00
+              span –
+              br
+              | 16:00
+          .program__middle(data-aos='fade-up' data-aos-delay='150')
+          .program__right(data-aos='fade-left' data-aos-delay='300')
+            .program__right-main
+              img(src="img/classic.svg", alt="")
+              .program__title Classic e-commerce
+              p.program__desc Трансформация крупных компаний для конкуренции с новыми игроками рынка. Точки роста, новые направления и вызовы.
+            .program__right-info
+              p.program__r-title Транспорт и мобильность в городе
+              .program__r-item
+                .program__r-image
+                  img(src="img/sp-1.png", alt="")
+                .program__r-info
+                  p 
+                    span Максим Логинов, 
+                    span.mob-h
+                    | VC Baring Vostok
+              .program__r-container
+                .program__r-item
+                  .program__r-image
+                    img(src="img/sp-2.png", alt="")
+                  .program__r-info
+                    p 
+                      span Александр Шульгин,
+                      span.mob-h 
+                      | VC OZON.ru, CEO
+                .program__r-item
+                  .program__r-image
+                    img(src="img/sp-3.png", alt="")
+                  .program__r-info
+                    p 
+                      span Florian Jansen, 
+                      span.mob-h
+                      | VC Lamoda, CEO
+                .program__r-item
+                  .program__r-image
+                    img(src="img/sp-4.png", alt="")
+                  .program__r-info
+                    p 
+                      span Сергей Добряков, 
+                      span.mob-h
+                      | VC X5 Retail Group, директор департамента продуктов больших данных и аналитики
+                .program__r-item
+                  .program__r-image
+                    img(src="img/sp-5.png", alt="")
+                  .program__r-info
+                    p 
+                      span Abe Fornis, 
+                      span.mob-h
+                      | VC Coca-Cola, Strategy Manager, Russia, Ukraine, Belarus
+        .program__item
+          .program__line
+          .program__left(data-aos='fade-right')
+            p.program__time 16:00
+              span –
+              br
+              | 18:00
+          .program__middle(data-aos='fade-up' data-aos-delay='150')
+          .program__right(data-aos='fade-left' data-aos-delay='300')
+            .program__right-main
+              img(src="img/fashion.svg", alt="")
+              .program__title Fashion e-commerce 
+              p.program__desc Основные драйверы роста сегмента. Использование современных технологий и формирование новых привычек.
+        .program__item
+          .program__line
+          .program__left(data-aos='fade-right')
+            p.program__time 18:00
+              span –
+              br
+              | 21:00
+          .program__middle(data-aos='fade-up' data-aos-delay='150')
+          .program__right(data-aos='fade-left' data-aos-delay='300')
+            .program__right-main
+              img(src="img/invest.svg", alt="")
+              .program__title Инвестиции
+                br
+                | в e-commerce
+              p.program__desc Индустрия развивающегося e-commerce, скорость развития при высокой цене ошибки. Как не ошибиться с бизнес-моделью, командой, рынком.
+        .program__item
+          .program__line
+          .program__left(data-aos='fade-right')
+            p.program__time 22:00
+          .program__middle(data-aos='fade-up' data-aos-delay='150')
+          .program__right(data-aos='fade-left' data-aos-delay='300')
+            p Networking
+
+      img.program__image-2(src="img/program-2.svg", alt="" data-aos='fade-up')
+      img.program__image-3(src="img/program-3.svg", alt="" data-aos='fade-up')
+      a.program__btn(href="#" data-aos='fade-up') Зарегистрироваться
+      p.program__und-btn(data-aos='fade-up') Количество мест ограничено, но будет доступна трансляция
+  // END SECTION :: program
+
+  // BEGIN SECTION :: speakers
+  section.speakers#section-speakers
+    .container
+      h2(data-aos='fade-up') Спикеры
+      .speakers__carousel(data-aos='fade-up')
         .swiper-container(js-slider-speakers)
           .swiper-wrapper
             .swiper-slide
@@ -51,74 +258,160 @@ block content
               path(d='M35.3 28.9v-.3c-.1-1.9-.8-3.7-2.1-5.2l-19-20.7C11.2-.6 6-.8 2.7 2.2c-3.3 3-3.5 8.2-.5 11.5l14 15.2-14 15.2c-3 3.3-2.8 8.5.5 11.5s8.5 2.8 11.5-.5l19-20.7c1.4-1.5 2.1-3.3 2.1-5.2v-.3', clip-path='url(#SVGID_2_)', fill='#908f8f')
       .speakers__grid
         .speakers__row
-          .speakers__item
-            .speakers__image.pos2
-              img(src="img/speaker-1.png", alt="")
-            .speakers__title Иван Фёдорович
+          .speakers__item(data-aos='fade-up')
+            .speakers__info
+              .speakers__image.pos2
+                img(src="img/speaker-1.png", alt="")
+              .speakers__title 
+                span Иван Фёдорович
+                  span.info i
+              .speakers__hidden
+                .speakers__title 
+                  span Иван Фёдорович
+                p Александр Сергеевич Пушкин (26 мая [6 июня] 1799, Москва — 29 января [10 февраля] 1837, Санкт-Петербург) — русский поэт, драматург и прозаик, заложивший основы русского реалистического направления, критик и теоретик литературы, историк, публицист; один из самых авторитетных литературных деятелей первой трети XIX века.
             .speakers__desc Спикер 1
-          .speakers__item
-            .speakers__image.pos4
-              img(src="img/speaker-2.png", alt="")
-            .speakers__title Влад Иванович
+          .speakers__item(data-aos='fade-up')
+            .speakers__info
+              .speakers__image.pos4
+                img(src="img/speaker-2.png", alt="")
+              .speakers__title 
+                span Влад Иванович
+                  span.info i
+              .speakers__hidden
+                .speakers__title 
+                  span Влад Иванович
+                p Александр Сергеевич Пушкин (26 мая [6 июня] 1799, Москва — 29 января [10 февраля] 1837, Санкт-Петербург) — русский поэт, драматург и прозаик, заложивший основы русского реалистического направления, критик и теоретик литературы, историк, публицист; один из самых авторитетных литературных деятелей первой трети XIX века.
             .speakers__desc Спикер 2
-          .speakers__item
-            .speakers__image.pos3
-              img(src="img/speaker-3.png", alt="")
-            .speakers__title Вера Примерная
+          .speakers__item(data-aos='fade-up')
+            .speakers__info
+              .speakers__image.pos3
+                img(src="img/speaker-3.png", alt="")
+              .speakers__title 
+                span Вера Примерная
+                  span.info i
+              .speakers__hidden
+                .speakers__title 
+                  span Вера Примерная
+                p Александр Сергеевич Пушкин (26 мая [6 июня] 1799, Москва — 29 января [10 февраля] 1837, Санкт-Петербург) — русский поэт, драматург и прозаик, заложивший основы русского реалистического направления, критик и теоретик литературы, историк, публицист; один из самых авторитетных литературных деятелей первой трети XIX века.
             .speakers__desc Название фирмы, директор  по электронной коммерции  и развитию цифровых технологий
-          .speakers__item
-            .speakers__image.pos1
-              img(src="img/speaker-4.png", alt="")
-            .speakers__title Пётр Сидоренко
+          .speakers__item(data-aos='fade-up')
+            .speakers__info
+              .speakers__image.pos1
+                img(src="img/speaker-4.png", alt="")
+              .speakers__title 
+                span Пётр Сидоренко
+                  span.info i
+              .speakers__hidden
+                .speakers__title 
+                  span Пётр Сидоренко
+                p Александр Сергеевич Пушкин (26 мая [6 июня] 1799, Москва — 29 января [10 февраля] 1837, Санкт-Петербург) — русский поэт, драматург и прозаик, заложивший основы русского реалистического направления, критик и теоретик литературы, историк, публицист; один из самых авторитетных литературных деятелей первой трети XIX века.
             .speakers__desc Спикер 4
         .speakers__row
-          .speakers__item
-            .speakers__image.pos3
-              img(src="img/speaker-5.png", alt="")
-            .speakers__title Александр Шульгин
+          .speakers__item(data-aos='fade-up')
+            .speakers__info
+              .speakers__image.pos3
+                img(src="img/speaker-5.png", alt="")
+              .speakers__title 
+                span Александр Шульгин
+                  span.info i
+              .speakers__hidden
+                .speakers__title 
+                  span Александр Шульгин
+                p Александр Сергеевич Пушкин (26 мая [6 июня] 1799, Москва — 29 января [10 февраля] 1837, Санкт-Петербург) — русский поэт, драматург и прозаик, заложивший основы русского реалистического направления, критик и теоретик литературы, историк, публицист; один из самых авторитетных литературных деятелей первой трети XIX века.
             .speakers__desc Спикер 5
-          .speakers__item
-            .speakers__image.pos2
-              img(src="img/speaker-6.png", alt="")
-            .speakers__title Свят Сколков
+          .speakers__item(data-aos='fade-up')
+            .speakers__info
+              .speakers__image.pos2
+                img(src="img/speaker-6.png", alt="")
+              .speakers__title 
+                span Свят Сколков
+                  span.info i
+              .speakers__hidden
+                .speakers__title 
+                  span Свят Сколков
+                p Александр Сергеевич Пушкин (26 мая [6 июня] 1799, Москва — 29 января [10 февраля] 1837, Санкт-Петербург) — русский поэт, драматург и прозаик, заложивший основы русского реалистического направления, критик и теоретик литературы, историк, публицист; один из самых авторитетных литературных деятелей первой трети XIX века.
             .speakers__desc Спикер 6
-          .speakers__item
-            .speakers__image.pos4
-              img(src="img/speaker-7.png", alt="")
-            .speakers__title Константин Баринов
+          .speakers__item(data-aos='fade-up')
+            .speakers__info
+              .speakers__image.pos4
+                img(src="img/speaker-7.png", alt="")
+              .speakers__title 
+                span Константин Баринов
+                  span.info i
+              .speakers__hidden
+                .speakers__title 
+                  span Константин Баринов
+                p Александр Сергеевич Пушкин (26 мая [6 июня] 1799, Москва — 29 января [10 февраля] 1837, Санкт-Петербург) — русский поэт, драматург и прозаик, заложивший основы русского реалистического направления, критик и теоретик литературы, историк, публицист; один из самых авторитетных литературных деятелей первой трети XIX века.
             .speakers__desc Спикер 7
-          .speakers__item
-            .speakers__image.pos1
-              img(src="img/speaker-8.png", alt="")
-            .speakers__title Илья Дробенко
+          .speakers__item(data-aos='fade-up')
+            .speakers__info
+              .speakers__image.pos1
+                img(src="img/speaker-8.png", alt="")
+              .speakers__title 
+                span Илья Дробенко
+                  span.info i
+              .speakers__hidden
+                .speakers__title 
+                  span Илья Дробенко
+                p Александр Сергеевич Пушкин (26 мая [6 июня] 1799, Москва — 29 января [10 февраля] 1837, Санкт-Петербург) — русский поэт, драматург и прозаик, заложивший основы русского реалистического направления, критик и теоретик литературы, историк, публицист; один из самых авторитетных литературных деятелей первой трети XIX века.
             .speakers__desc Спикер 8
         .speakers__row
-          .speakers__item
-            .speakers__image.pos3
-              img(src="img/speaker-9.png", alt="")
-            .speakers__title Кира Найтлиновна
+          .speakers__item(data-aos='fade-up')
+            .speakers__info
+              .speakers__image.pos3
+                img(src="img/speaker-9.png", alt="")
+              .speakers__title 
+                span Кира Найтлиновна
+                  span.info i
+              .speakers__hidden
+                .speakers__title 
+                  span Кира Найтлиновна
+                p Александр Сергеевич Пушкин (26 мая [6 июня] 1799, Москва — 29 января [10 февраля] 1837, Санкт-Петербург) — русский поэт, драматург и прозаик, заложивший основы русского реалистического направления, критик и теоретик литературы, историк, публицист; один из самых авторитетных литературных деятелей первой трети XIX века.
             .speakers__desc Спикер 9
-          .speakers__item
-            .speakers__image.pos2
-              img(src="img/speaker-10.png", alt="")
-            .speakers__title Иванна Верни
+          .speakers__item(data-aos='fade-up')
+            .speakers__info
+              .speakers__image.pos2
+                img(src="img/speaker-10.png", alt="")
+              .speakers__title 
+                span Иванна Верни
+                  span.info i
+              .speakers__hidden
+                .speakers__title 
+                  span Иванна Верни
+                p Александр Сергеевич Пушкин (26 мая [6 июня] 1799, Москва — 29 января [10 февраля] 1837, Санкт-Петербург) — русский поэт, драматург и прозаик, заложивший основы русского реалистического направления, критик и теоретик литературы, историк, публицист; один из самых авторитетных литературных деятелей первой трети XIX века.
             .speakers__desc Спикер 10
-          .speakers__item
-            .speakers__image.pos4
-              img(src="img/speaker-11.png", alt="")
-            .speakers__title Кир
-              br
-              | Путини
+          .speakers__item(data-aos='fade-up')
+            .speakers__info
+              .speakers__image.pos4
+                img(src="img/speaker-11.png", alt="")
+              .speakers__title 
+                span Кир
+                  br
+                  | Путини
+                  span.info i
+              .speakers__hidden
+                .speakers__title 
+                  span Кир
+                    br
+                    | Путини
+                p Александр Сергеевич Пушкин (26 мая [6 июня] 1799, Москва — 29 января [10 февраля] 1837, Санкт-Петербург) — русский поэт, драматург и прозаик, заложивший основы русского реалистического направления, критик и теоретик литературы, историк, публицист; один из самых авторитетных литературных деятелей первой трети XIX века.
             .speakers__desc Спикер 11
-          .speakers__item
-            .speakers__image.pos3
-              img(src="img/speaker-12.png", alt="")
-            .speakers__title Ангела Мышева
+          .speakers__item(data-aos='fade-up')
+            .speakers__info
+              .speakers__image.pos3
+                img(src="img/speaker-12.png", alt="")
+              .speakers__title 
+                span Ангела Мышева
+                  span.info i
+              .speakers__hidden
+                .speakers__title 
+                  span Ангела Мышева
+                p Александр Сергеевич Пушкин (26 мая [6 июня] 1799, Москва — 29 января [10 февраля] 1837, Санкт-Петербург) — русский поэт, драматург и прозаик, заложивший основы русского реалистического направления, критик и теоретик литературы, историк, публицист; один из самых авторитетных литературных деятелей первой трети XIX века.
             .speakers__desc Спикер 12
   // END SECTION :: speakers
 
   // BEGIN SECTION :: place
-  section.place
+  section.place#section-place
     .container.container--small
       h2 Место проведения
       img.place__image(src="img/place.svg", alt="" data-aos='fade-up' data-aos-delay='300')
@@ -170,7 +463,7 @@ block content
 
   // BEGIN SECTION :: companies
 
-  section.companies
+  section.companies#section-companies
     .container.container--small
       .companies__grid
         .companies__item(data-aos='fade-left')

@@ -1,0 +1,125 @@
+.phrase
+  padding: 92px 0 89px
+  .container
+    position: relative
+  &__image
+    position: absolute
+    top: -65px
+    max-width: 575px
+    width: 42%
+    right: -350px
+    transform: rotate(40deg)
+  &__container
+    max-width: 1310px
+    padding: 0 90px
+    margin: 0 auto
+    position: relative
+    z-index: 2
+    &:before
+      content: '“'
+      position: absolute
+      display: block
+      left: -3px
+      line-height: 1
+      top: -15px
+      font-size: 115px
+      color: #a5a5a8
+      font-family: $prata
+    &:after
+      content: '”'
+      position: absolute
+      display: block
+      right: 10px
+      line-height: 1
+      bottom: -122px
+      font-size: 115px
+      color: #a5a5a8
+      font-family: $prata
+    p
+      margin-top: 30px
+      font-size: 24px
+      color: $fontColor
+      line-height: 1.45
+      font-family: $regular
+  &__person
+    max-width: 1310px
+    padding: 0 83px
+    margin: 92px auto 0
+    display: flex
+    align-items: flex-end
+    justify-content: flex-start
+  &__p-image
+    max-width: 228px
+    max-width: 228px
+    margin-right: 70px
+  &__info
+    p 
+      margin-top: 24px
+      font-family: $regular
+      font-size: 24px
+      color: $lightColor
+      line-height: 1.2
+  &__title
+    font-family: $prata
+    font-size: 44px
+    line-height: 1.2
+
++r($desktop)
+  .phrase
+    &__image
+      display: none
+    &__container
+      padding: 0 60px
+    &__person
+      padding: 0 60px
+    &__p-image
+      max-width: 200px
+      max-width: 200px
+      img
+        width: 100%
+        height: auto
+    &__title
+      font-size: 32px
+    &__info
+      p
+        font-size: 20px
+        margin-top: 20px
+
++r($tablet)
+  .phrase
+    padding: 40px 0
+    &__container
+      padding: 0 26px
+      p
+        font-size: 12px
+        margin-top: 11px
+        line-height: 1.25
+      &:before
+        font-size: 60px
+        top: -11px
+        left: -6px
+      &:after
+        font-size: 60px
+        right: 1px
+        bottom: -55px
+    &__person
+      flex-direction: column
+      align-items: center
+      justify-content: center
+      margin: 53px auto 0
+      text-align: center
+      padding: 0 
+    &__p-image
+      margin: 0 auto
+      max-width: 152px
+      max-height: 152px
+    &__title
+      font-size: 22px
+      margin-top: 35px
+    &__info
+      p
+        font-size: 12px
+        margin-top: 13px
+        max-width: 200px
+        margin: 10px auto 0
+        line-height: 1.32

@@ -12,7 +12,7 @@
       top: 50%
       transform: translateY(-50%)
       cursor: pointer
-      z-index: 2
+      z-index: 4
       path
         transition: all $transitionSpeed $ease
       &:hover
@@ -35,7 +35,6 @@
       max-width: 100%
   &__grid
     margin-top: 115px
-    outline: 1px solid red
     padding: 0 25px
   &__row
     display: flex
@@ -45,9 +44,22 @@
     flex-wrap: wrap
   &__item
     width: 23.5%
-    outline: 1px solid red
     max-width: 290px
     margin: 30px 0 42px
+    position: relative
+    &:hover
+      z-index: 2
+  &__info
+    cursor: pointer
+    position: relative
+
+    &:hover
+      .speakers__title
+        span.info
+          background: $redColor
+      .speakers__hidden
+        opacity: 1
+        pointer-events: all
   &__image
     max-width: 235px
     margin: 0 auto 0 0
@@ -80,19 +92,56 @@
     img
       position: relative
       z-index: 1
+      min-height: 238px
   &__title
     margin: 17px 0 9px
     font-size: 44px
     color: #000000
     font-family: $prata
     line-height: 1.2
+    position: relative
+    max-width: 290px
+    span
+      position: relative
+      &.info
+        font-family: $prata
+        font-size: 18px
+        justify-content: center
+        align-items: center
+        color: #fff
+        display: flex
+        width: 25px
+        height: 25px
+        border-radius: 50%
+        background: #a6a7aa
+        transition: all $transitionSpeed $ease
+        position: absolute
+        bottom: 35px
+        right: -28px
   &__desc
     color: $lightColor
     line-height: 1.2
     font-family: $regular
     font-size: 24px
     min-height: 140px
-    outline: 1px solid red
+  &__hidden
+    position: absolute
+    z-index: 3
+    top: 192px
+    left: -50px
+    background: #f0f0f0
+    padding: 50px
+    border-radius: 8px
+    opacity: 0
+    pointer-events: none
+    width: 135%
+    transition: all $transitionSpeed $ease
+    p
+      margin-top: 30px
+      line-height: 1.4
+      font-size: 24px
+      font-family: $regular
+      color: #363636
 
 +r($wide)
   .speakers
@@ -103,9 +152,96 @@
     .swiper-container
       overflow: visible
       .swiper-button
-        transform: translateY(-50%) scale(0.5)
+        transform: translateY(-50%) scale(0.3)
         &.prev
-          left: -55px
-          transform: translateY(-50%) rotate(180deg) scale(0.5)
+          left: -60px
+          transform: translateY(-50%) rotate(180deg) scale(0.3)
         &.next
-          right: -55px
+          right: -60px
+
+    &__title
+      font-size: 28px
+      max-width: 180px
+      span.info
+        right: -13px
+        bottom: 25px
+        width: 20px
+        height: 20px
+        font-size: 15px
+    &__image
+      max-width: 180px
+      &:before
+        width: 80px
+        height: 80px
+      img
+        width: 100%
+        min-height: 180px
+    &__desc
+      font-size: 18px
+      min-height: 80px
+    &__hidden
+      padding: 25px
+      left: -25px
+      top: 159px
+      width: 125%
+      p
+        font-size: 20px
+
++r($desktop)
+  .speakers
+    &__item
+      width: 48%
+      margin: 20px 0
+
++r($tablet)
+  .speakers
+    &__desc
+      font-size: 16px
+    &__hidden
+      p
+        margin-top: 15px
+        font-size: 16px
+    &__carousel
+      margin-top: 5px
+      padding: 0 38px
+      
+    .swiper-container
+      position: relative
+      padding: 0 25px
+      .swiper-button
+        &.prev
+          left: -30px
+        &.next
+          right: -30px
+      &:before
+        position: absolute
+        display: block
+        content: ''
+        height: 100%
+        width: 60px
+        background: #fdfcfc
+        left: -50px
+        top: 0
+        z-index: 2
+      &:after
+        position: absolute
+        display: block
+        content: ''
+        height: 100%
+        width: 60px
+        background: #fdfcfc
+        right: -50px
+        top: 0
+        z-index: 2
+    &__grid
+      margin-top: 10px
+
++r($mobile)
+  .speakers
+    &__item
+      width: 100%
+      margin: 15px 0
+      max-width: 450px
+    
+    &__hidden
+      width: 120%

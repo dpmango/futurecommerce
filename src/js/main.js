@@ -241,30 +241,29 @@ $(document).ready(function() {
     // var swiperAnimation = new SwiperAnimation();
 
     // EXAMPLE SWIPER
-    var projectsSwiper = new Swiper("[js-slider-projects]", {
+    var projectsSwiper = new Swiper("[js-slider-speakers]", {
       // Optional parameters
       direction: "horizontal",
-      slidesPerView: 3,
-      spaceBetween: 30,
-      loop: false,
-      // pagination: ".swiper-pagination",
-      // paginationClickable: true,
+      slidesPerView: 5,
+      spaceBetween: 60,
+      loop: true,
+      navigation: {
+        nextEl: ".swiper-button.next",
+        prevEl: ".swiper-button.prev"
+      },
+      freemode: true,
       parallax: true,
       effect: "slide",
-      scrollbar: {
-        el: ".swiper-scrollbar",
-        draggable: true
-      },
       breakpoints: {
-        // when window width is <= 320px
-        520: {
-          slidesPerView: 1,
-          spaceBetween: 0
-        },
-        // when window width is <= 480px
+        // when window width is <= 768px
         768: {
-          slidesPerView: 2,
-          spaceBetween: 20
+          slidesPerView: 3,
+          spaceBetween: 55
+        },
+        // when window width is <= 1268px
+        1268: {
+          slidesPerView: 4,
+          spaceBetween: 60
         }
       }
     });

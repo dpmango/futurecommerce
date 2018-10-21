@@ -1,0 +1,96 @@
+.share
+  padding-bottom: 52px
+  &__title
+    font-size: 34px
+    color: #000000
+    font-family: $bold
+    line-height: 1.2
+    margin-top: 110px
+    margin-bottom: 35px
+  &__grid
+    display: flex
+    align-items: flex-start
+    justify-content: flex-start
+    flex-wrap: wrap
+  &__item
+    margin: 35px 5.25% 35px 0
+    &:last-child
+      margin-right: 0
+  &__link
+    width: 110px
+    height: 110px
+    background-color: #e0e0e0
+    border-radius: 50%
+    transition: all $transitionSpeed $ease
+    display: inline-block
+    
+    &.vk
+      background-image: url(../img/vk.svg)
+      background-size: 60%
+      background-position: center center
+      background-repeat: no-repeat
+      &:hover
+        background-color: $vk
+    &.ok
+      background-image: url(../img/ok.svg)
+      background-size: 33%
+      background-position: center center
+      background-repeat: no-repeat
+      &:hover
+        background-color: $ok
+    &.mail
+      background-image: url(../img/mail.svg)
+      background-size: 50%
+      background-position: center center
+      background-repeat: no-repeat
+      &:hover
+        background-color: $mail
+    &.fb
+      background-image: url(../img/fb.svg)
+      background-size: 30%
+      background-position: center center
+      background-repeat: no-repeat
+      &:hover
+        background-color: $fb
+    &.inst
+      background-image: url(../img/inst.svg)
+      background-size: 50%
+      background-position: center center
+      background-repeat: no-repeat
+      &:hover
+        background-color: $inst
+    &.tw
+      background-image: url(../img/tw.svg)
+      background-size: 54%
+      background-position: center center
+      background-repeat: no-repeat
+      &:hover
+        background-color: $tw
+    &.in
+      background-image: url(../img/in.svg)
+      background-size: 48%
+      background-position: center center
+      background-repeat: no-repeat
+      &:hover
+        background-color: $in
+
++r($wide)
+  .share
+    &__item
+      margin: 20px 3% 20px 0
+    &__link
+      width: 75px
+      height: 75px
+
++r($tablet)
+  .share
+    padding-bottom: 20px
+    &__title
+      font-size: 16px
+      margin-bottom: 22px
+      margin-top: 32px
+    &__item
+      margin: 15px 25px 15px 0
+    &__link
+      width: 54px
+      height: 54px

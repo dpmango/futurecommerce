@@ -16,6 +16,146 @@ block content
   
   // END SECTION :: firstscreen
 
+  // BEGIN SECTION :: speakers
+  section.speakers
+    .container
+      h2 Спикеры
+      .speakers__carousel
+        .swiper-container(js-slider-speakers)
+          .swiper-wrapper
+            .swiper-slide
+              img(src="img/s-slide-1.jpg", alt="")
+            .swiper-slide
+              img(src="img/s-slide-2.jpg", alt="")
+            .swiper-slide
+              img(src="img/s-slide-3.jpg", alt="")
+            .swiper-slide
+              img(src="img/s-slide-4.jpg", alt="")
+            .swiper-slide
+              img(src="img/s-slide-5.jpg", alt="")
+          .swiper-button.next
+            svg(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='35.3', height='57.7')
+              style.
+              defs
+                path#SVGID_1_(d='M0 0h35.3v57.7H0z')
+              clippath#SVGID_2_
+                use(xlink:href='#SVGID_1_', overflow='visible')
+              path(d='M35.3 28.9v-.3c-.1-1.9-.8-3.7-2.1-5.2l-19-20.7C11.2-.6 6-.8 2.7 2.2c-3.3 3-3.5 8.2-.5 11.5l14 15.2-14 15.2c-3 3.3-2.8 8.5.5 11.5s8.5 2.8 11.5-.5l19-20.7c1.4-1.5 2.1-3.3 2.1-5.2v-.3', clip-path='url(#SVGID_2_)', fill='#908f8f')
+          .swiper-button.prev
+            svg(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='35.3', height='57.7')
+              style.
+              defs
+                path#SVGID_1_(d='M0 0h35.3v57.7H0z')
+              clippath#SVGID_2_
+                use(xlink:href='#SVGID_1_', overflow='visible')
+              path(d='M35.3 28.9v-.3c-.1-1.9-.8-3.7-2.1-5.2l-19-20.7C11.2-.6 6-.8 2.7 2.2c-3.3 3-3.5 8.2-.5 11.5l14 15.2-14 15.2c-3 3.3-2.8 8.5.5 11.5s8.5 2.8 11.5-.5l19-20.7c1.4-1.5 2.1-3.3 2.1-5.2v-.3', clip-path='url(#SVGID_2_)', fill='#908f8f')
+      .speakers__grid
+        .speakers__row
+          .speakers__item
+            .speakers__image.pos2
+              img(src="img/speaker-1.png", alt="")
+            .speakers__title Иван Фёдорович
+            .speakers__desc Спикер 1
+          .speakers__item
+            .speakers__image.pos4
+              img(src="img/speaker-2.png", alt="")
+            .speakers__title Влад Иванович
+            .speakers__desc Спикер 2
+          .speakers__item
+            .speakers__image.pos3
+              img(src="img/speaker-3.png", alt="")
+            .speakers__title Вера Примерная
+            .speakers__desc Название фирмы, директор  по электронной коммерции  и развитию цифровых технологий
+          .speakers__item
+            .speakers__image.pos1
+              img(src="img/speaker-4.png", alt="")
+            .speakers__title Пётр Сидоренко
+            .speakers__desc Спикер 4
+        .speakers__row
+          .speakers__item
+            .speakers__image.pos3
+              img(src="img/speaker-5.png", alt="")
+            .speakers__title Александр Шульгин
+            .speakers__desc Спикер 5
+          .speakers__item
+            .speakers__image.pos2
+              img(src="img/speaker-6.png", alt="")
+            .speakers__title Свят Сколков
+            .speakers__desc Спикер 6
+          .speakers__item
+            .speakers__image.pos4
+              img(src="img/speaker-7.png", alt="")
+            .speakers__title Константин Баринов
+            .speakers__desc Спикер 7
+          .speakers__item
+            .speakers__image.pos1
+              img(src="img/speaker-8.png", alt="")
+            .speakers__title Илья Дробенко
+            .speakers__desc Спикер 8
+        .speakers__row
+          .speakers__item
+            .speakers__image.pos3
+              img(src="img/speaker-9.png", alt="")
+            .speakers__title Кира Найтлиновна
+            .speakers__desc Спикер 9
+          .speakers__item
+            .speakers__image.pos2
+              img(src="img/speaker-10.png", alt="")
+            .speakers__title Иванна Верни
+            .speakers__desc Спикер 10
+          .speakers__item
+            .speakers__image.pos4
+              img(src="img/speaker-11.png", alt="")
+            .speakers__title Кир
+              br
+              | Путини
+            .speakers__desc Спикер 11
+          .speakers__item
+            .speakers__image.pos3
+              img(src="img/speaker-12.png", alt="")
+            .speakers__title Ангела Мышева
+            .speakers__desc Спикер 12
+  // END SECTION :: speakers
+
+  // BEGIN SECTION :: place
+  section.place
+    .container.container--small
+      h2 Место проведения
+      img.place__image(src="img/place.svg", alt="" data-aos='fade-up' data-aos-delay='300')
+      .place__map
+        .place__info(data-aos='fade-up' data-aos-delay='300')
+          p.place__title Mail.Ru Group
+          p.place__desc Бизнес центр «SkyLight»
+            br
+            | Ленинградский проспект 39, стр. 79
+          a.place__btn Зарегистрироваться
+          p.place__desc-btn Количество мест ограничено,
+            br
+            | но будет доступна трансляция
+        iframe(src='https://yandex.ua/map-widget/v1/?um=constructor%3A589fa95200c7792dafd32deb0f38bffb485be0e615d6dac9515cbb31535c67d2&source=constructor', width='100%', height='855', frameborder='0' data-aos='fade-up')
+  // END SECTION :: place
+
+  // BEGIN SECTION :: share
+  section.share
+    .container.container--small
+      p.share__title(data-aos='fade-up') Поделись нашим событием с друзьями:
+      .share__grid(data-aos='fade-up')
+        .share__item
+          a.share__link.vk(href="#")
+        .share__item
+          a.share__link.ok(href="#")
+        .share__item
+          a.share__link.mail(href="#")
+        .share__item
+          a.share__link.fb(href="#")
+        .share__item
+          a.share__link.inst(href="#")
+        .share__item
+          a.share__link.tw(href="#")
+        .share__item
+          a.share__link.in(href="#")
+  // END SECTION :: share
+
   // BEGIN SECTION :: video
   section.video
     .container.container--small

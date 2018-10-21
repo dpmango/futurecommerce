@@ -1,0 +1,111 @@
+.speakers
+  margin-bottom: -23px
+  &__carousel
+    overflow: hidden
+    padding: 0 58px
+    margin: -40px -10px 0
+    width: calc(100% + 20px)
+  .swiper-container
+    overflow: visible
+    .swiper-button
+      position: absolute
+      top: 50%
+      transform: translateY(-50%)
+      cursor: pointer
+      z-index: 2
+      path
+        transition: all $transitionSpeed $ease
+      &:hover
+        path
+          fill: $redColor
+      &.prev
+        left: -45px
+        transform: translateY(-50%) rotate(180deg)
+      &.next
+        right: -45px
+  .swiper-wrapper
+    display: flex
+    align-items: center
+    overflow: visible
+  .swiper-slide
+    text-align: center
+    img
+      height: 100%
+      width: auto
+      max-width: 100%
+  &__grid
+    margin-top: 115px
+    outline: 1px solid red
+    padding: 0 25px
+  &__row
+    display: flex
+    align-items: flex-start
+    justify-content: space-between
+    width: 100%
+    flex-wrap: wrap
+  &__item
+    width: 23.5%
+    outline: 1px solid red
+    max-width: 290px
+    margin: 30px 0 42px
+  &__image
+    max-width: 235px
+    margin: 0 auto 0 0
+    position: relative
+    &:before
+      display: block
+      position: absolute
+      width: 110px
+      height: 110px
+      background: $redColor
+      content: ''
+      border-radius: 50%
+      z-index: 0
+    &.pos1
+      &:before
+        left: 0px
+        top: -12px
+    &.pos2
+      &:before
+        right: -20px
+        top: -5px
+    &.pos3
+      &:before
+        right: -10px
+        bottom: 3px
+    &.pos4
+      &:before
+        left: -22px
+        bottom: 3px
+    img
+      position: relative
+      z-index: 1
+  &__title
+    margin: 17px 0 9px
+    font-size: 44px
+    color: #000000
+    font-family: $prata
+    line-height: 1.2
+  &__desc
+    color: $lightColor
+    line-height: 1.2
+    font-family: $regular
+    font-size: 24px
+    min-height: 140px
+    outline: 1px solid red
+
++r($wide)
+  .speakers
+    .swiper-slide
+      img
+        width: 100%
+        height: auto
+    .swiper-container
+      overflow: visible
+      .swiper-button
+        transform: translateY(-50%) scale(0.5)
+        &.prev
+          left: -55px
+          transform: translateY(-50%) rotate(180deg) scale(0.5)
+        &.next
+          right: -55px

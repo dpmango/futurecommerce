@@ -85,6 +85,10 @@
     &:hover
       background: transparent
       color: $redColor
+    &--desktop
+      display: flex
+    &--mobile
+      display: none
   &__language
     display: inline-block
     color: #141314
@@ -125,6 +129,9 @@ body.is-transitioning
 
 +r($hd1640)
   .header
+    &__wrapper
+      padding-top: 20px
+      padding-bottom: 20px
     &__menu-link
       font-size: 28px
       margin: 0 20px -3px 0
@@ -203,8 +210,18 @@ body.is-transitioning
 
 +r($tablet)
   .header
+    &__wrapper
+      padding: 9px 23px
     &__language
       margin-left: 0
       margin-right: auto
+      font-size: 32px
+    &__menu-link
+      font-size: 32px
     .hamburger
       order: 2
+    &__btn
+      &--desktop
+        display: none
+      &--mobile
+        display: flex

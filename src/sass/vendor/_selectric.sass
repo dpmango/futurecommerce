@@ -20,13 +20,15 @@
     white-space: nowrap
     overflow: hidden
     text-overflow: ellipsis
-    margin: 0 38px 0 10px
-    font-size: 15px
+    // font-size: 15px
     line-height: 1
-    font-family: $extrabold
-    color: #fff
-    padding: 22px 10px 23px
-    text-transform: uppercase
+    font-family: regular
+    background: #fdfcfc
+    border: 1px solid #333333
+    color: #333333
+    font-family: $regular
+    line-height: normal
+    padding: 4px 8px
     -webkit-user-select: none
     -moz-user-select: none
     -ms-user-select: none
@@ -34,17 +36,31 @@
   .button
     display: block
     position: absolute
-    right: 17px
-    top: 21px
-    width: 15px
-    height: 15px
-    background: url(../../img/arrow-down.svg) center center no-repeat
-    background-size: contain
+    right: 0
+    top: 0
+    width: 30px
+    height: 100%
+    border: 1px solid #333333
+    border-left: none
+    background-color: #e0e0e1
     color: transparent
     font-size: 0
     text-align: center
     transform-origin: center center
     transition: all $transitionSpeed $ease
+    &:before
+      transition: all $transitionSpeed $ease
+      position: absolute
+      display: block
+      content: ''
+      width: 0
+      height: 0
+      border-style: solid
+      border-width: 6px 5px 0 5px
+      border-color: #333 transparent transparent transparent
+      left: 50%
+      top: 50%
+      transform: translate(-50%, -50%)
 
 .selectric-focus .selectric
   border-color: #aaaaaa
@@ -61,7 +77,9 @@
   .selectric-items
     display: block
   .button
-    transform: rotate(-180deg)
+    &:before
+      transform: translate(-50%, -50%) rotate(180deg)
+    
 
 .selectric-disabled
   filter: alpha(opacity = 50)
@@ -121,7 +139,7 @@
   position: absolute
   top: 100%
   left: 0
-  background: #E9E9E9
+  background: #fdfcfc
   z-index: -1
   .selectric-scroll
     height: 100%
@@ -132,26 +150,25 @@
   bottom: 100%
 
 .selectric-items
+  border: 1px solid #333
+  margin-top: 10px
   ul
     list-style: none
     padding: 0
     margin: 0
     font-size: 12px
-    line-height: 20px
-    min-height: 20px
   li
     list-style: none
     padding: 0
     margin: 0
-    font-size: 21px
-    line-height: 1.4
+    font-size: 16px
+    line-height: 1.2
     min-height: 20px
     display: block
-    padding: 10px 20px
-    color: #252525
+    padding: 5px 12px
+    color: #333
     cursor: pointer
     font-family: $regular
-    border-bottom: 1px solid #979797
     &.selected
       background: #E0E0E0
       color: #444
@@ -159,8 +176,7 @@
       background: #D0D0D0
       color: #444
     &:hover
-      background: #FF3B00
-      color: #fff
+      color: $redColor
   .disabled
     filter: alpha(opacity = 50)
     opacity: 0.5

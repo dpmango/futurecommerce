@@ -1,72 +1,212 @@
 .popup
-  max-width: 880px
-  background: $whiteColor
+  max-width: 988px
+  background: #fdfcfc
   text-align: left
   margin: 0 auto
-  padding: 100px
+  padding: 58px 95px 42px
   // max-height: 98vh
   position: relative
-  &__info
-    height: auto
-    max-height: 600px
-    overflow-y: scroll
-    margin-top: 30px
-    // padding-right: 15px
+  &--ty
+    max-width: 590px
+    padding-bottom: 90px
+  &--pb
+    padding-bottom: 90px
+  &--feedback
+    max-width: 650px
+    .popup__btn
+      margin-top: 40px
+    .popup__title
+      margin-bottom: 25px
   .mfp-close
-    width: 38px
-    height: 38px
+    width: 20px
+    height: 20px
     font-size: 0
     color: transparent
     opacity: 1
     background: url(../img/close.svg) center center no-repeat
     background-size: cover
-    right: 50px
-    top: 50px
+    right: 30px
+    top: 30px
   &__title
-    font-size: 48px
+    font-size: 34px
     text-align: left
-  p
+    font-family: $prata
+    line-height: 1.2
     font-weight: 300
-    font-size: 24px
-    line-height: 1.25
-    margin-top: 30px
-    padding-right: 15px
-    &:first-child
-      margin-top: 0
+    padding: 0
+    margin-bottom: 40px
+    max-width: 550px
     span
-      font-weight: 700
-    &.dot
-      position: relative
-      padding-left: 20px
-      &:before
-        display: block
+      font-family: $regular
+      font-size: 10px
+      color: #a6a6a6
+      margin-left: 5px
+  .input-container
+    position: relative
+    margin-bottom: 26px
+    &.has-error
+      input,
+      textarea
+        border-color: $redColor
+      .selectric .label
+        border-color: $redColor
+      .selectric .button
+        border-color: $redColor
+    label
+      font-size: 16px
+      color: #333333
+      line-height: 1.2
+      font-family: $regular
+      margin-bottom: 5px
+      display: inline-block
+      &.error
         position: absolute
-        content: '•'
-        color: $fontColor
-        font-size: 24px
-        line-height: 1.3
-        // width: 5px
-        // height: 5px
+        color: $redColor
+        font-family: $regular
+        font-size: 10px
+        bottom: -15px
         left: 0
-        top: 0
+        margin-bottom: 0
+    input,
+    textarea
+      background: #fdfcfc
+      border: 1px solid #333333
+      color: #333333
+      font-family: $regular
+      line-height: normal
+      padding: 4px 8px
+      width: 100%
+      transition: all $transitionSpeed $ease
+    textarea
+      height: 60px
+      resize: none
+    &--checkbox
+      margin-top: 80px
+      margin-bottom: -47px
+      input
+        position: absolute
+        z-index: -1
+        opacity: 0
+        margin: 10px 0 0 20px
+        width: 0 !important
+
+    .checkbox__text
+      padding: 0 0 0 30px
+      cursor: pointer
+      span
+        border-bottom: 1px solid #333
+        transition: all $transitionSpeed $ease
+      a
+        &:hover
+          span
+            color: $redColor
+            border-color: transparent
+      &:before
+        content: ''
+        position: absolute
+        top: -2px
+        left: 0
+        width: 18px
+        height: 18px
+        display: block
+        border: 1px solid #333
+      &:after
+        display: block
+        width: 10px
+        height: 6px
+        border: 2px solid $redColor
+        position: absolute
+        content: ''
+        left: 4px
+        top: 3px
+        border-top: none
+        border-right: none
+        transform: rotate(-45deg)
+        opacity: 0
+        transition: all $transitionSpeed $ease
+    input
+      &:checked + .checkbox__text
+        &:after
+          opacity: 1
+  &__grid
+    display: flex
+    align-items: flex-start
+    justify-content: space-between
+  &__left
+    max-width: 353px
+    width: 45%
+    // outline: 1px solid red
+  &__right
+    max-width: 350px
+    width: 45%
+    // outline: 1px solid red
+  &__name
+    display: flex
+    align-items: center
+    justify-content: space-between
+    .input-container
+      &:nth-of-type(1)
+        margin-right: 20px
+        width: 35%
+      &:nth-of-type(2)
+        width: 63%
+  &__btn
+    margin: 10px auto 0
+    display: flex
+    align-items: center
+    justify-content: center
+    color: #fff
+    font-family: $bold
+    background: $redColor
+    border-radius: 7px
+    font-size: 16px
+    text-decoration: none
+    text-align: center
+    padding: 15px 20px
+    line-height: 1
+    max-width: 250px
+    width: 100%
+    cursor: pointer
+    border: 4px solid $redColor
+    transition: all $transitionSpeed $ease
+    &:hover
+      background: transparent
+      color: $redColor
+      border-color: $redColor
+  &__info
+    font-size: 16px
+    color: #333333
+    line-height: 1.2
+    font-family: $regular
+    margin-top: 25px
+  &__hidden-trigger
+    position: absolute
+    left: 0
+    top: 0
+    width: 0
+    height: 0
+    display: block
+    background: transparent
+    opacity: 0
+    visibility: hidden
+
 
 +r($desktop)
   .popup
-    padding: 60px
-    .mfp-close
-      right: 28px
-      top: 28px
-      width: 28px
-      height: 28px
-    &__title
-      font-size: 36px
-    p
-      font-size: 20px
-      margin-top: 20px
+    padding: 20px
+    &__left
+      width: 48%
+    &__right
+      width: 48%
 
 +r($tablet)
   .popup
-    padding: 30px
+    margin: 5px auto
+    padding: 25px
+    &--ty
+      padding-bottom: 30px
+    &--pb
+      padding-bottom: 30px
     .mfp-close
       right: 14px
       top: 14px
@@ -74,6 +214,7 @@
       height: 14px
     &__title
       font-size: 24px
+      margin-bottom: 20px
     p
       font-size: 14px
       margin-top: 14px
@@ -81,6 +222,19 @@
         &:before
           line-height: 0
           top: 8px
+    &__grid
+      flex-wrap: wrap
+    .input-container
+      margin-bottom: 20px
+      &--checkbox
+        margin-top: 5px
+        margin-bottom: 20px
+    &__left
+      max-width: 100%
+      width: 100%
+    &__right
+      max-width: 100%
+      width: 100%
 
 
 .mfp-zoom-in

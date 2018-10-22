@@ -7,8 +7,38 @@ block content
   // BEGIN SECTION :: firstscreen
   section.firstscreen
     .container
-      .firstscreen__info
-        img(src="img/logotype.svg", alt="")
+      img.firstscreen__image-1(src="img/place.svg", alt="" data-aos='fade-up' data-aos-delay='150')
+      p.firstscreen__date(data-aos='fade-up')
+        span 16 ноября 2018
+      img.firstscreen__logo(src="img/logotype.svg", alt="" data-aos='fade-up')
+      p.firstscreen__info(data-aos='fade-up') Открытый разговор с основателями и первыми лицами технологических e-commerce компаний. Реальные истории успеха и роста, проб и ошибок, практические кейсы сервисов в развивающейся индустрии.
+      .firstscreen__li(data-aos='fade-up')
+        .firstscreen__image
+          img(src="img/city.svg", alt="")
+        p Сity Mobility
+      .firstscreen__li(data-aos='fade-up')
+        .firstscreen__image
+          img(src="img/food.svg", alt="")
+        p Food Tech
+      .firstscreen__li(data-aos='fade-up')
+        .firstscreen__image
+          img(src="img/services.svg", alt="")
+        p Services on Demand
+      .firstscreen__li(data-aos='fade-up')
+        .firstscreen__image
+          img(src="img/classic.svg", alt="")
+        p Classic e-commerce
+      .firstscreen__li(data-aos='fade-up')
+        .firstscreen__image
+          img(src="img/fashion.svg", alt="")
+        p Fashion e-commerce
+      .firstscreen__li(data-aos='fade-up')
+        .firstscreen__image
+          img(src="img/invest.svg", alt="")
+        p Инвестиции в e-commerce
+      .firstscreen__btn-container(data-aos='fade-up')
+        a.firstscreen__btn(href="#registration" data-effect="mfp-zoom-in" js-popup) Зарегистрироваться
+        p.firstscreen__btn-text Количество мест ограничено, но будет доступна трансляция
   
   // END SECTION :: firstscreen
 
@@ -219,8 +249,9 @@ block content
 
       img.program__image-2(src="img/program-2.svg", alt="" data-aos='fade-up')
       img.program__image-3(src="img/program-3.svg", alt="" data-aos='fade-up')
-      a.program__btn(href="#" data-aos='fade-up') Зарегистрироваться
-      p.program__und-btn(data-aos='fade-up') Количество мест ограничено, но будет доступна трансляция
+      .program__btn-container(data-aos='fade-up')
+        a.program__btn(href="#registration" data-effect="mfp-zoom-in" js-popup) Зарегистрироваться
+        p.program__und-btn Количество мест ограничено, но будет доступна трансляция
   // END SECTION :: program
 
   // BEGIN SECTION :: speakers
@@ -421,7 +452,7 @@ block content
           p.place__desc Бизнес центр «SkyLight»
             br
             | Ленинградский проспект 39, стр. 79
-          a.place__btn Зарегистрироваться
+          a.place__btn(href="#registration" data-effect="mfp-zoom-in" js-popup) Зарегистрироваться
           p.place__desc-btn Количество мест ограничено,
             br
             | но будет доступна трансляция

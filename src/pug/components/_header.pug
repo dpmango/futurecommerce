@@ -14,11 +14,12 @@ section#section-top
             span Организаторы и партнёры
           a.header__menu-link(href="#section-place")
             span Место проведения
-          .header__mobile-btn(data-teleport-target="mobile-select")
+          .header__mobile-btn
+            a.header__btn.header__btn--mobile(href="#registration" data-effect="mfp-zoom-in" js-popup) Зарегистрироваться
         a.header__language(href="#")
           span ENG
-        .header__btn-container(js-teleport data-teleport-to="mobile-select" data-teleport-condition="<768")
-          a.header__btn(href="#" data-effect="mfp-zoom-in" js-popup) Зарегистрироваться
+        .header__btn-container
+          a.header__btn.header__btn--desktop(href="#registration" data-effect="mfp-zoom-in" js-popup) Зарегистрироваться
         .hamburger.hamburger--spin(js-hamburger)
           .hamburger-box
             .hamburger-inner

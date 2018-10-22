@@ -29,6 +29,7 @@ $(document).ready(function() {
     initScrollMonitor();
     initTeleport();
     initTimer();
+    initSelectric();
   }
 
   _window.on("resize", debounce(setBreakpoint, 200));
@@ -39,6 +40,14 @@ $(document).ready(function() {
   //////////
   // COMMON
   //////////
+
+  // SELECTRIC
+  function initSelectric() {
+    $("select").selectric({
+      disableOnMobile: false,
+      nativeOnMobile: false
+    });
+  }
 
   function initaos() {
     AOS.init();
@@ -78,6 +87,8 @@ $(document).ready(function() {
   function closeMobileMenu() {
     $("[js-hamburger]").removeClass("is-active");
     $(".header__menu").removeClass("is-active");
+    $("body").removeClass("is-fixed");
+    $("html").removeClass("is-fixed");
   }
 
   // header scroll
@@ -474,16 +485,16 @@ $(document).ready(function() {
     // GENERIC FUNCTIONS
     var validateErrorPlacement = function(error, element) {
       error.addClass("ui-input__validation");
-      error.appendTo(element.parent("div"));
+      error.appendTo(element.parents(".input-container"));
     };
     var validateHighlight = function(element) {
       $(element)
-        .parent("div")
+        .parents(".input-container")
         .addClass("has-error");
     };
     var validateUnhighlight = function(element) {
       $(element)
-        .parent("div")
+        .parents(".input-container")
         .removeClass("has-error");
     };
     var validateSubmitHandler = function(form) {
@@ -511,55 +522,103 @@ $(document).ready(function() {
       // });
     };
 
+    var validatePhone = {
+      required: true,
+      minlength: 11,
+      digits: true,
+      normalizer: function(value) {
+        var PHONE_MASK = "+7 (XXX) XXX-XXXX";
+        if (!value || value === PHONE_MASK) {
+          return value;
+        } else {
+          return value.replace(/[^\d]/g, "");
+        }
+      }
+    };
+
+    jQuery.validator.messages.required = "";
+
     /////////////////////
-    // LEAD FORM
+    // REGISTRATION FORM
     ////////////////////
-
-    function emailIsValid(value) {
-      var emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-      return emailRegex.test(value);
-    }
-
-    function phoneIsValid(value) {
-      // https://www.regextester.com/99415
-      var phoneRegex = /^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/;
-      return phoneRegex.test(value);
-    }
-
-    $.validator.addMethod("isPhoneMail", function(value, element) {
-      return emailIsValid(value) || phoneIsValid(value);
-    });
-
-    $(".js-lead-form").validate({
+    $(".js-form").validate({
       errorPlacement: validateErrorPlacement,
       highlight: validateHighlight,
       unhighlight: validateUnhighlight,
       submitHandler: validateSubmitHandler,
       rules: {
         name: "required",
-        phonemail: {
+        phone: validatePhone,
+        mail: {
           required: true,
-          isPhoneMail: true
-        }
+          email: true
+        },
+        secondname: "required",
+        company: "required",
+        agreepersonal: "required",
+        agreemedia: "required",
+        select1: "required",
+        select2: "required",
+        select3: "required",
+        step: "required",
+        area1: "required",
+        area2: "required",
+        area3: "required"
       },
       messages: {
-        name: "Необходимо заполнить",
-        phonemail: {
-          required: "Необходимо заполнить",
-          isPhoneMail: function(value, element) {
-            var value = $(element).val();
-            var errMessage;
-
-            if (value.indexOf("@") !== -1) {
-              errMessage = emailIsValid() ? false : "Неверный формат почты";
-            } else {
-              errMessage = phoneIsValid() ? false : "Неверный формат телефона";
-            }
-
-            return errMessage;
-          }
-        }
+        name: "Заполните это поле",
+        phone: {
+          required: "Заполните это поле",
+          minlength: "Введите корректный телефон"
+        },
+        mail: {
+          required: "Заполните это поле",
+          email: "E-mail содержит неправильный формат"
+        },
+        secondname: "Заполните это поле",
+        company: "Заполните это поле",
+        agreepersonal: "Заполните это поле",
+        agreemedia: "Заполните это поле",
+        select1: "Заполните это поле",
+        select2: "Заполните это поле",
+        select3: "Заполните это поле",
+        step: "Заполните это поле",
+        area1: "Заполните это поле",
+        area2: "Заполните это поле",
+        area3: "Заполните это поле"
       }
+    });
+
+    $(".js-form-feedback").validate({
+      errorPlacement: validateErrorPlacement,
+      highlight: validateHighlight,
+      unhighlight: validateUnhighlight,
+      submitHandler: validateSubmitHandler,
+      rules: {
+        name: "required",
+        phone: validatePhone,
+        mail: {
+          required: true,
+          email: true
+        },
+        secondname: "required"
+      },
+      messages: {
+        name: "Заполните это поле",
+        phone: {
+          required: "Заполните это поле",
+          minlength: "Введите корректный телефон"
+        },
+        mail: {
+          required: "Заполните это поле",
+          email: "E-mail содержит неправильный формат"
+        },
+        secondname: "Заполните это поле"
+      }
+    });
+
+    $.validator.setDefaults({
+      ignore: [] // DON'T IGNORE PLUGIN HIDDEN SELECTS, CHECKBOXES AND RADIOS!!!
     });
   }
 

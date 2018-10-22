@@ -59,6 +59,9 @@
     line-height: 1.2
     font-size: 24px
 
+  #map
+    height: 855px
+
 +r($wide)
   .place
     &__map
@@ -81,7 +84,7 @@
   .place
     &__map
       padding: 0
-      iframe
+      iframe, #map
         height: 600px !important
         max-height: 600px
     &__info
@@ -104,7 +107,7 @@
     .container
       padding: 0
     &__map
-      iframe
+      iframe, #map
         height: 350px !important
         max-height: 350px
     &__image

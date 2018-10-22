@@ -3,7 +3,7 @@ var config = require("../config");
 
 gulp.task("copy:fonts", function() {
   return gulp
-    .src(config.src.fonts + "/**/*.{eot,ttf,svg,woff,woff2}")
+    .src(config.src.fonts + "/**/*.{eot,ttf,otf,svg,woff,woff2}")
     .pipe(gulp.dest(config.dest.fonts));
 });
 

@@ -139,6 +139,23 @@ $(document).ready(function() {
   ////////////
   // TIMER PLUGIN
   ////////////
+
+  function Plurize(number, one, two, five) {
+    var n = Math.abs(number);
+    n %= 100;
+    if (n >= 5 && n <= 20) {
+      return five;
+    }
+    n %= 10;
+    if (n === 1) {
+      return one;
+    }
+    if (n >= 2 && n <= 4) {
+      return two;
+    }
+    return five;
+  }
+
   function initTimer(printable) {
     if ($(".timer").length > 0) {
       var countDownDate = new Date("November 16, 2018 09:00:00").getTime();
@@ -161,7 +178,11 @@ $(document).ready(function() {
 
         // Display the result in the element with id="demo"
         document.getElementById("days").innerHTML = days;
+        document.getElementById("days-w").innerHTML =
+          " " + Plurize(days, "день", "дня", "дней");
         document.getElementById("hours").innerHTML = hours;
+        document.getElementById("hours-w").innerHTML =
+          " " + Plurize(hours, "час", "часа", "часов");
         document.getElementById("minutes").innerHTML = minutes;
         document.getElementById("seconds").innerHTML = seconds;
 

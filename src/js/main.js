@@ -487,13 +487,21 @@ $(document).ready(function() {
     $(element)
       .parents(".input-container")
       .removeClass("has-error")
+      .removeClass("show-input")
       .addClass("clear-label");
   });
 
-  _document.on("click", "li.last", function() {
-    $(this)
-      .parents(".input-container")
-      .addClass("show-input");
+  $(".js-form select").on("selectric-select", function(
+    event,
+    element,
+    selectric
+  ) {
+    var curVal = $(element).val();
+    var other = $(this);
+
+    if (curVal == "Другое") {
+      other.parents(".input-container").addClass("show-input");
+    }
   });
 
   // jQuery validate plugin

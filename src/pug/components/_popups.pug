@@ -18,7 +18,7 @@
           input#f3(type="text" placeholder="hello@mail.ru" name="email")
         .input-container
           label(for="f4") Контактный телефон
-          input#f4(type="text" placeholder="+7 --- --- -- --" name="phone")
+          input#f4(type="text" js-phone-mask placeholder="+7 --- --- -- --" name="phone")
         .input-container
           label(for="f5") Компания
           input#f5(type="text" placeholder="ООО Эксперт Коммуникейшн" name="company")
@@ -147,7 +147,7 @@
       input#c3(type="text" placeholder="hello@mail.ru" name="mail")
     .input-container
       label(for="c4") Контактный телефон*
-      input#c4(type="text" placeholder="+7 --- --- -- --" name="phone")
+      input#c4(type="text" js-phone-mask placeholder="+7 --- --- -- --" name="phone")
     input.popup__btn(type="submit" value="Зарегистрироваться")
     a.popup__hidden-trigger(js-trigger-thanks-popup href="#thankpopup" data-effect="mfp-zoom-in" js-popup)
 

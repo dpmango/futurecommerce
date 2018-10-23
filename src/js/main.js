@@ -479,6 +479,17 @@ $(document).ready(function() {
   // FORM VALIDATIONS
   ////////////////
 
+  $(".js-form select").on("selectric-select", function(
+    event,
+    element,
+    selectric
+  ) {
+    $(element)
+      .parents(".input-container")
+      .removeClass("has-error")
+      .addClass("clear-label");
+  });
+
   // jQuery validate plugin
   // https://jqueryvalidation.org
   function initValidations() {
@@ -492,6 +503,7 @@ $(document).ready(function() {
         .parents(".input-container")
         .addClass("has-error");
     };
+
     var validateUnhighlight = function(element) {
       $(element)
         .parents(".input-container")
@@ -547,23 +559,23 @@ $(document).ready(function() {
       unhighlight: validateUnhighlight,
       submitHandler: validateSubmitHandler,
       rules: {
-        name: "required",
+        first_name: "required",
         phone: validatePhone,
-        mail: {
+        email: {
           required: true,
           email: true
         },
-        secondname: "required",
+        last_name: "required",
         company: "required",
         agreepersonal: "required",
         agreemedia: "required",
-        select1: "required",
-        select2: "required",
-        select3: "required",
-        step: "required",
-        area1: "required",
-        area2: "required",
-        area3: "required"
+        company_size: "required",
+        company_duty: "required",
+        duty: "required",
+        position: "required",
+        why_interest: "required",
+        what_themes: "required",
+        how_use: "required"
       },
       messages: {
         name: "Заполните это поле",
@@ -571,21 +583,21 @@ $(document).ready(function() {
           required: "Заполните это поле",
           minlength: "Введите корректный телефон"
         },
-        mail: {
+        email: {
           required: "Заполните это поле",
           email: "E-mail содержит неправильный формат"
         },
         secondname: "Заполните это поле",
         company: "Заполните это поле",
-        agreepersonal: "Заполните это поле",
-        agreemedia: "Заполните это поле",
-        select1: "Заполните это поле",
-        select2: "Заполните это поле",
-        select3: "Заполните это поле",
-        step: "Заполните это поле",
-        area1: "Заполните это поле",
-        area2: "Заполните это поле",
-        area3: "Заполните это поле"
+        checkbox1: "Заполните это поле",
+        checkbox2: "Заполните это поле",
+        company_size: "Заполните это поле",
+        company_duty: "Заполните это поле",
+        duty: "Заполните это поле",
+        position: "Заполните это поле",
+        why_interest: "Заполните это поле",
+        what_themes: "Заполните это поле",
+        how_use: "Заполните это поле"
       }
     });
 
@@ -647,7 +659,6 @@ $(document).ready(function() {
     });
   }
 
-
   // some plugins get bindings onNewPage only that way
   function triggerBody() {
     $(window).scroll();
@@ -677,150 +688,149 @@ $(document).ready(function() {
   }
 });
 
+// // When the window has finished loading create our google map below
+// google.maps.event.addDomListener(window, 'load', init);
 
-// When the window has finished loading create our google map below
-google.maps.event.addDomListener(window, 'load', init);
+// function init() {
+//   // Basic options for a simple Google Map
+//   // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+//   var mapOptions = {
+//     zoom: 17,
+//     disableDefaultUI: true,
+//     center: new google.maps.LatLng(55.797045, 37.537818),
+//     styles: [
+//       {
+//           "featureType": "administrative",
+//           "elementType": "all",
+//           "stylers": [
+//               {
+//                   "saturation": "-100"
+//               }
+//           ]
+//       },
+//       {
+//           "featureType": "administrative.province",
+//           "elementType": "all",
+//           "stylers": [
+//               {
+//                   "visibility": "off"
+//               }
+//           ]
+//       },
+//       {
+//           "featureType": "landscape",
+//           "elementType": "all",
+//           "stylers": [
+//               {
+//                   "saturation": -100
+//               },
+//               {
+//                   "lightness": 65
+//               },
+//               {
+//                   "visibility": "on"
+//               }
+//           ]
+//       },
+//       {
+//           "featureType": "poi",
+//           "elementType": "all",
+//           "stylers": [
+//               {
+//                   "saturation": -100
+//               },
+//               {
+//                   "lightness": "50"
+//               },
+//               {
+//                   // "visibility": "simplified"
+//               }
+//           ]
+//       },
+//       {
+//           "featureType": "road",
+//           "elementType": "all",
+//           "stylers": [
+//               {
+//                   "saturation": "-100"
+//               }
+//           ]
+//       },
+//       {
+//           "featureType": "road.highway",
+//           "elementType": "all",
+//           "stylers": [
+//               {
+//                   "visibility": "simplified"
+//               }
+//           ]
+//       },
+//       {
+//           "featureType": "road.arterial",
+//           "elementType": "all",
+//           "stylers": [
+//               {
+//                   "lightness": "30"
+//               }
+//           ]
+//       },
+//       {
+//           "featureType": "road.local",
+//           "elementType": "all",
+//           "stylers": [
+//               {
+//                   "lightness": "40"
+//               }
+//           ]
+//       },
+//       {
+//           "featureType": "transit",
+//           "elementType": "all",
+//           "stylers": [
+//               {
+//                   "saturation": -100
+//               },
+//               {
+//                   "visibility": "simplified"
+//               }
+//           ]
+//       },
+//       {
+//           "featureType": "water",
+//           "elementType": "geometry",
+//           "stylers": [
+//               {
+//                   "hue": "#ffff00"
+//               },
+//               {
+//                   "lightness": -25
+//               },
+//               {
+//                   "saturation": -97
+//               }
+//           ]
+//       },
+//       {
+//           "featureType": "water",
+//           "elementType": "labels",
+//           "stylers": [
+//               {
+//                   "lightness": -25
+//               },
+//               {
+//                   "saturation": -100
+//               }
+//           ]
+//       }
+//     ]
+//   };
 
-function init() {
-  // Basic options for a simple Google Map
-  // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
-  var mapOptions = {
-    zoom: 17,
-    disableDefaultUI: true,
-    center: new google.maps.LatLng(55.797045, 37.537818),
-    styles: [
-      {
-          "featureType": "administrative",
-          "elementType": "all",
-          "stylers": [
-              {
-                  "saturation": "-100"
-              }
-          ]
-      },
-      {
-          "featureType": "administrative.province",
-          "elementType": "all",
-          "stylers": [
-              {
-                  "visibility": "off"
-              }
-          ]
-      },
-      {
-          "featureType": "landscape",
-          "elementType": "all",
-          "stylers": [
-              {
-                  "saturation": -100
-              },
-              {
-                  "lightness": 65
-              },
-              {
-                  "visibility": "on"
-              }
-          ]
-      },
-      {
-          "featureType": "poi",
-          "elementType": "all",
-          "stylers": [
-              {
-                  "saturation": -100
-              },
-              {
-                  "lightness": "50"
-              },
-              {
-                  // "visibility": "simplified"
-              }
-          ]
-      },
-      {
-          "featureType": "road",
-          "elementType": "all",
-          "stylers": [
-              {
-                  "saturation": "-100"
-              }
-          ]
-      },
-      {
-          "featureType": "road.highway",
-          "elementType": "all",
-          "stylers": [
-              {
-                  "visibility": "simplified"
-              }
-          ]
-      },
-      {
-          "featureType": "road.arterial",
-          "elementType": "all",
-          "stylers": [
-              {
-                  "lightness": "30"
-              }
-          ]
-      },
-      {
-          "featureType": "road.local",
-          "elementType": "all",
-          "stylers": [
-              {
-                  "lightness": "40"
-              }
-          ]
-      },
-      {
-          "featureType": "transit",
-          "elementType": "all",
-          "stylers": [
-              {
-                  "saturation": -100
-              },
-              {
-                  "visibility": "simplified"
-              }
-          ]
-      },
-      {
-          "featureType": "water",
-          "elementType": "geometry",
-          "stylers": [
-              {
-                  "hue": "#ffff00"
-              },
-              {
-                  "lightness": -25
-              },
-              {
-                  "saturation": -97
-              }
-          ]
-      },
-      {
-          "featureType": "water",
-          "elementType": "labels",
-          "stylers": [
-              {
-                  "lightness": -25
-              },
-              {
-                  "saturation": -100
-              }
-          ]
-      }
-    ]
-  };
+//   var mapElement = document.getElementById('map');
+//   var map = new google.maps.Map(mapElement, mapOptions);
 
-  var mapElement = document.getElementById('map');
-  var map = new google.maps.Map(mapElement, mapOptions);
-
-  var marker = new google.maps.Marker({
-    position: new google.maps.LatLng(55.797045, 37.537818),
-    map: map,
-    // title: 'Mail!'
-  });
-}
+//   var marker = new google.maps.Marker({
+//     position: new google.maps.LatLng(55.797045, 37.537818),
+//     map: map,
+//     // title: 'Mail!'
+//   });
+// }

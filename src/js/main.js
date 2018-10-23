@@ -177,14 +177,14 @@ $(document).ready(function() {
         var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
         // Display the result in the element with id="demo"
-        document.getElementById("days").innerHTML = days;
-        document.getElementById("days-w").innerHTML =
-          " " + Plurize(days, "день", "дня", "дней");
-        document.getElementById("hours").innerHTML = hours;
-        document.getElementById("hours-w").innerHTML =
-          " " + Plurize(hours, "час", "часа", "часов");
-        document.getElementById("minutes").innerHTML = minutes;
-        document.getElementById("seconds").innerHTML = seconds;
+        $("#days").html(days);
+        $("#days-w").html(Plurize(days, "день", "дня", "дней"))
+        $("#hours").html(hours);
+        $("#hours-w").html(Plurize(hours, "час", "часа", "часов"))
+        $("#minutes").html(minutes);
+        $("#minutes-v").html(Plurize(minutes, "минута", "минуты", "минут"));
+        $("#seconds").html(seconds);
+        $("#seconds-v").html(Plurize(seconds, "секунда", "секунды", "секунд"));
 
         // If the count down is finished, write some text
         if (distance < 0) {
@@ -280,6 +280,7 @@ $(document).ready(function() {
 
   function initPopups() {
     var startWindowScroll = 0;
+    var childOpened, parentItem
     $("[js-popup]").magnificPopup({
       type: "inline",
       fixedContentPos: true,
@@ -291,14 +292,24 @@ $(document).ready(function() {
       removalDelay: 500,
       mainClass: "popup-buble",
       callbacks: {
+        open: function(){
+          parentItem = this.currItem;
+          console.log(parentItem)
+        },
         beforeOpen: function() {
           startWindowScroll = _window.scrollTop();
           this.st.mainClass = this.st.el.attr("data-effect");
           // $('html').addClass('mfp-helper');
         },
         close: function() {
+          childOpened = (this.currItem !== parentItem);
           // $('html').removeClass('mfp-helper');
           _window.scrollTop(startWindowScroll);
+        },
+        afterClose: function () {
+          if (childOpened) {
+            $('[js-trigger-reg-modal]').click()
+          }
         }
       }
     });

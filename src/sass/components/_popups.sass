@@ -44,6 +44,12 @@
   .input-container
     position: relative
     margin-bottom: 26px
+    .hidden
+      display: none
+      margin-top: 5px
+    &.show-input
+      .hidden
+        display: block
     &.clear-label
       label
         &.error

@@ -490,6 +490,12 @@ $(document).ready(function() {
       .addClass("clear-label");
   });
 
+  _document.on("click", "li.last", function() {
+    $(this)
+      .parents(".input-container")
+      .addClass("show-input");
+  });
+
   // jQuery validate plugin
   // https://jqueryvalidation.org
   function initValidations() {

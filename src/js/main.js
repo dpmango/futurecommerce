@@ -41,6 +41,21 @@ $(document).ready(function() {
     });
   }
 
+  // window.addEventListener('load', function(){
+  //   console.log(AOS)
+  //   AOS.refresh()
+  // });
+  // $(window).load(function() {
+  //   setTimeout(function() {
+  //     AOS.refresh();
+  //   }, 1000);
+  // });
+  _window.on('scroll', throttle(function(){
+    console.log('refreshing AOS')
+    AOS.refresh();
+  }, 200))
+
+
   function legacySupport() {
     // svg support for laggy browsers
     svg4everybody();
@@ -119,7 +134,7 @@ $(document).ready(function() {
     var targetScroll = el.offset().top - headerHeight;
 
     TweenLite.to(window, 1, {
-      scrollTo: targetScroll,
+      scrollTo: {y: targetScroll, autoKill: false},
       ease: easingSwing
     });
   }
@@ -359,20 +374,16 @@ $(document).ready(function() {
       .removeClass("has-error")
       .removeClass("show-input")
       .addClass("clear-label");
-  });
 
-  $(".js-form select").on("selectric-select", function(
-    event,
-    element,
-    selectric
-  ) {
     var curVal = $(element).val();
     var other = $(this);
-
+	  console.log(curVal)
     if (curVal == "Другое") {
       other.parents(".input-container").addClass("show-input");
     }
+
   });
+
 
   // jQuery validate plugin
   // https://jqueryvalidation.org
@@ -394,28 +405,24 @@ $(document).ready(function() {
         .removeClass("has-error");
     };
     var validateSubmitHandler = function(form) {
-      $("[js-trigger-thanks-popup]").click();
-      $(form)
-        .find("input")
-        .val("");
-      // initSubmit();
-      // $.ajax({
-      //   type: "POST",
-      //   url: $(form).attr("action"),
-      //   data: $(form).serialize(),
-      //   success: function(response) {
-      //     $(form).removeClass("loading");
-      //     var data = $.parseJSON(response);
-      //     if (data.status == "success") {
-      //       // do something I can't test
-      //     } else {
-      //       $(form)
-      //         .find("[data-error]")
-      //         .html(data.message)
-      //         .show();
-      //     }
-      //   }
-      // });
+         $.ajaxSetup({
+          headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+          }
+        });
+         $.ajax({
+           type: "POST",
+           url: $(form).attr("action"),
+           // url: "/post-answer",
+           data: $(form).serialize(),
+           success: function(response) {
+	         console.log(response);
+             $("[js-trigger-thanks-popup]").click(); // show thanks modal
+             $(form).find("input").val(""); // clear values
+           }
+         });
+
+         return false;
     };
 
     var validatePhone = {

@@ -25,16 +25,17 @@
         .input-container
           label(for="f6") Должность
           input#f6(type="text" placeholder="Маркетолог" name="position")
-        .input-container.input-container--checkbox
-          input#f6-c(type='checkbox' name="checkbox1")
-          label(for="f6-c").checkbox__text Я принимаю 
-            a(href="#popupmedia" data-effect="mfp-zoom-in" js-popup) 
-              span соглашение на обработку персональных данных
-        .input-container.input-container--checkbox
-          input#f6-c1(type='checkbox' name="checkbox2")
-          label(for="f6-c1").checkbox__text Я даю 
-            a(href="#popuppersonal" data-effect="mfp-zoom-in" js-popup) 
-              span согласие на использование аудио и видео информации
+        .input-teleport(js-teleport data-teleport-to="mobile-select" data-teleport-condition="<768")
+          .input-container.input-container--checkbox
+            input#f6-c(type='checkbox' name="checkbox1")
+            label(for="f6-c").checkbox__text Я принимаю 
+              a(href="#popupmedia" data-effect="mfp-zoom-in" js-popup) 
+                span соглашение на обработку персональных данных
+          .input-container.input-container--checkbox
+            input#f6-c1(type='checkbox' name="checkbox2")
+            label(for="f6-c1").checkbox__text Я даю 
+              a(href="#popuppersonal" data-effect="mfp-zoom-in" js-popup) 
+                span согласие на использование аудио и видео информации
       .popup__right
         .input-container
           label(for="f10") Размер компании
@@ -90,6 +91,7 @@
         .input-container
           label(for="f15") Как вы планируете применятьполученные знания?
           textarea#f15(name="how_use" placeholder="Напишите свой ответ")
+        div(data-teleport-target="mobile-select")
     input.popup__btn(type="submit" value="Зарегистрироваться")
     a.popup__hidden-trigger(js-trigger-thanks-popup href="#thankpopup" data-effect="mfp-zoom-in" js-popup)
 

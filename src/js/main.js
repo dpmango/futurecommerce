@@ -178,9 +178,9 @@ $(document).ready(function() {
 
         // Display the result in the element with id="demo"
         $("#days").html(days);
-        $("#days-w").html(Plurize(days, "день", "дня", "дней"))
+        $("#days-w").html(Plurize(days, "день", "дня", "дней"));
         $("#hours").html(hours);
-        $("#hours-w").html(Plurize(hours, "час", "часа", "часов"))
+        $("#hours-w").html(Plurize(hours, "час", "часа", "часов"));
         $("#minutes").html(minutes);
         $("#minutes-v").html(Plurize(minutes, "минута", "минуты", "минут"));
         $("#seconds").html(seconds);
@@ -280,8 +280,9 @@ $(document).ready(function() {
 
   function initPopups() {
     var startWindowScroll = 0;
-    var childOpened, parentItem
-    $("[js-popup]").magnificPopup({
+    var childOpened, parentItem;
+    $("body").magnificPopup({
+      delegate: "[js-popup]",
       type: "inline",
       fixedContentPos: true,
       fixedBgPos: true,
@@ -292,9 +293,9 @@ $(document).ready(function() {
       removalDelay: 500,
       mainClass: "popup-buble",
       callbacks: {
-        open: function(){
+        open: function() {
           parentItem = this.currItem;
-          console.log(parentItem)
+          console.log(parentItem);
         },
         beforeOpen: function() {
           startWindowScroll = _window.scrollTop();
@@ -302,13 +303,13 @@ $(document).ready(function() {
           // $('html').addClass('mfp-helper');
         },
         close: function() {
-          childOpened = (this.currItem !== parentItem);
+          childOpened = this.currItem !== parentItem;
           // $('html').removeClass('mfp-helper');
           _window.scrollTop(startWindowScroll);
         },
-        afterClose: function () {
+        afterClose: function() {
           if (childOpened) {
-            $('[js-trigger-reg-modal]').click()
+            $("[js-trigger-reg-modal]").click();
           }
         }
       }
@@ -613,8 +614,8 @@ $(document).ready(function() {
         },
         last_name: "required",
         company: "required",
-        agreepersonal: "required",
-        agreemedia: "required",
+        checkbox1: "required",
+        checkbox2: "required",
         company_size: "required",
         company_duty: "required",
         duty: "required",

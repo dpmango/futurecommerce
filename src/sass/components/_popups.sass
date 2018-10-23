@@ -47,15 +47,14 @@
     .hidden
       display: none
       margin-top: 5px
-    &.show-input
-      .hidden
-        display: block
     &.clear-label
       label
         &.error
           display: none
+    &.show-input.clear-label,
+    &.show-input
       .hidden
-        display: none
+        display: block
     &.has-error
       input,
       textarea
